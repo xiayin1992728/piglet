@@ -66,7 +66,7 @@
     }
 
     .advert-tags-container p {
-        font-size: 0.1rem;
+        font-size: 0.4rem;
         margin: 0;
     }
 
@@ -143,7 +143,7 @@
     }
 
     .advert-carousel-text p {
-      font-size: 0.1rem;
+      font-size: 0.4rem;
       color: #4a4848;
     }
 
@@ -206,7 +206,7 @@
     }
 
     .second-product-header p {
-        font-size: 0.1rem;
+        font-size: 0.4rem;
         color: #796f6f;
     }
 
@@ -332,11 +332,11 @@
     }
 
     .product-top-left-text p {
-      font-size: 0.1rem;
+      font-size: 0.4rem;
     }
 
     .product-top-right {
-        font-size: 0.1rem;
+        font-size: 0.4rem;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -359,7 +359,7 @@
     .product-buttom {
       display: flex;
       flex-direction: row;
-      font-size: 0.1rem;
+      font-size: 0.4rem;
       justify-content: space-between;
     }
 
