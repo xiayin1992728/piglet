@@ -11,9 +11,9 @@
 	<!-- Swiper -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="__INDEX__/images/1.jpg"></div>
-      <div class="swiper-slide"><img src="__INDEX__/images/2.jpg"></div>
-      <div class="swiper-slide"><img src="__INDEX__/images/3.jpg"></div>
+      <div class="swiper-slide"><img src="__INDEX__/images/1.jpg" width="100%"></div>
+      <div class="swiper-slide"><img src="__INDEX__/images/2.jpg" width="100%"></div>
+      <div class="swiper-slide"><img src="__INDEX__/images/3.jpg" width="100%"></div>
     </div>
   </div>
 
@@ -23,6 +23,13 @@
 {block name="js"}
 <script src="__INDEX__/js/swiper.min.js"></script>
 <script type="text/javascript">
-	var swiper = new Swiper('.swiper-container');
+	var swiper = new Swiper('.swiper-container',{
+		spaceBetween: 30,
+      	centeredSlides: true,
+      	autoplay: {
+        	delay: 2500,
+        	disableOnInteraction: false,
+      	},
+	});
 </script>
 {/block}
