@@ -10,6 +10,12 @@
       margin: 0;
       padding: 0;
     }
+ p,h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+ }   
+
+    /*顶部轮播*/
     .swiper-container {
       width: 100%;
       height: 5rem;
@@ -32,4 +38,105 @@
       -ms-flex-align: center;
       -webkit-align-items: center;
       align-items: center;
+    }
+
+    /*广告*/
+
+    .advert-tags {
+      background: white;
+      height: 1rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .advert-tags-container {
+      background: white;
+      position: absolute;
+      top:-1.6em;
+      width: 90%;
+      height: 2rem;
+      border-radius: 0.2rem;
+      box-shadow: 0px 0px 0.5rem #6565e4;
+      z-index: 999;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .advert-tags-container p {
+        font-size: 0.1rem;
+        margin: 0;
+    }
+
+    .advert-icon {
+      width: 1.5rem;
+      height: 1rem;
+    }
+
+    .advert-tags-container-left {
+      display: flex;
+      flex-direction: column;
+      width: 2rem;
+      align-items: center;
+    }
+
+    .advert-tags-container-left div {
+       background-image: url('/static/index/images/advert/money.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .advert-tags-container-middle {
+        width: 1px;
+        height: 1.1rem;
+        background: #d8cece;
+    }
+
+    .advert-tags-container-right {
+      display: flex;
+      flex-direction: column;
+      width: 2rem;
+      align-items: center;
+    }
+
+    .advert-tags-container-right div {
+       background-image: url('/static/index/images/advert/blacklist.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .advert-carousel {
+          height: 1.5rem;
+          background: #e4dede;
+          display: flex;
+          justify-content: center;
+    }
+
+    .advert-carousel-container {
+      margin: 0.2rem 0 0 0;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .advert-carousel-img {
+          width: 1rem;
+          height: 1rem;
+          margin-right: 0.5rem;
+          background-image: url('/static/index/images/advert/jie.jpg');
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+    }
+
+    .advert-carousel-text h5 {
+      font-size: 0.2rem;
+      color: gray;
+    }
+
+    .advert-carousel-text p {
+      font-size: 0.1rem;
+      color: #4a4848;
     }
