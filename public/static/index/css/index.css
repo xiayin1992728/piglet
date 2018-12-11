@@ -149,4 +149,234 @@
     }
 
     /*推荐栏*/
+    .recommend {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 0.2rem 0;
+    }
+
+    .recommend div {
+      width: 45%;
+      background: #07c6f3;
+      border-radius: 0.1rem;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.4rem 0.15rem;
+    }
+
+    .recommend h4 {
+        font-size: 0.4rem;
+        text-align: center;
+        color: white;
+    }
+
+    .recommend p {
+      font-size: 0.2rem;
+      text-align: center;
+      color: white;
+    }
+
+    /*秒下款产品*/
+
+  .second-product-header {
+    background: #e4dede;
+  }
+
+  .second-product-header-container {
+      height: 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 61%;
+      margin-left: 0.5rem;
+      justify-content: space-around;
+    }
+
+    .second-product-header-container div {
+      background: url('/static/index/images/product/fire.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 0.6rem;
+      height: 0.6rem;
+    }
+
+    .second-product-header h5 {
+          font-size: 0.4rem;
+          color: gray;
+    }
+
+    .second-product-header p {
+        font-size: 0.1rem;
+        color: #796f6f;
+    }
+
+    .second-product {
+      padding: 0.5rem 0.6rem;
+      background:white;
+    }
+
+    .second-product-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .second-product-container {
+        width: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .second-product-container div {
+      height: 1rem;
+      width: 1rem;
+    }
+
+    .second-product-container div img {
+      width: 100%;
+    }
+
+    .second-product-container p {
+        font-size: 0.4rem;
+        color: #585050;
+    }
+
+    .second-product-list .line {
+        height: 1.6rem;
+        width: 1px;
+        background: #d8cece;
+    }
+
+
+    /*产品*/
+    .product {
+
+    }
+
+    /*产品头部*/
+    .product-header {
+      background: #e4dede;
+      height: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product-header-container {
+      width: 35%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-left: 0.5rem;
+    }
+
+    .product-header-container div {
+      width: 0.6rem;
+      height: 0.6rem;
+      display: flex;
+    }
+
+    .product-header-container div img {
+      width: 100%;
+    }
+
+    .product-header-container h6 {
+      font-size: 0.4rem;
+      color: gray;
+    }
+
+    /*产品列表*/
+    .product-list {
+
+    }
+
+    .product-container {
+      display: flex;
+      flex-direction: column;
+      height: 2.5rem;
+      justify-content: center;
+      background: white;
+      padding: 5px 0.5rem;
+    }
+
+    .product-top {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .product-top-left {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 50%;
+    }
+
+    .product-top-left-img {
+        width: 1rem;
+        height: 1rem;
+        display: flex;
+    }
+
+    .product-top-left-img img {
+      width: 100%;
+    }
+
+    .product-top-left-text {
+
+    }
+
+    .product-top-left-text h4 {
+      font-size: 0.3rem;
+    }
+
+    .product-top-left-text p {
+      font-size: 0.1rem;
+    }
+
+    .product-top-right {
+        font-size: 0.1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 49%;
+    }
+
+    .product-top-right span {
+        color:orange;
+        display: flex;
+        align-items: center;
+    }
+
+    .product-middle {
+      height: 1px;
+      width: 100%;
+      background: gray;
+      margin: 5px 0;
+    }
+
+    .product-buttom {
+      display: flex;
+      flex-direction: row;
+      font-size: 0.1rem;
+      justify-content: space-between;
+    }
+
+
+    .product-buttom-left p span{
+      color: orange;
+    }
+
+    .product-buttom-right {
+
+    }
+
+
+
+
+
+
 
