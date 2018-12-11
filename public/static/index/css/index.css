@@ -131,6 +131,13 @@
           background-size: 100% 100%;
     }
 
+    .advert-carousel-text {
+      height: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .advert-carousel-text h5 {
       font-size: 0.2rem;
       color: gray;
@@ -140,3 +147,6 @@
       font-size: 0.1rem;
       color: #4a4848;
     }
+
+    /*推荐栏*/
+
