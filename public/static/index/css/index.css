@@ -305,19 +305,20 @@
     .product-top {
       display: flex;
       flex-direction: row;
+      justify-content: space-between
     }
 
     .product-top-left {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      width: 50%;
     }
 
     .product-top-left-img {
         width: 1rem;
         height: 1rem;
         display: flex;
+        margin-right: 10px;
     }
 
     .product-top-left-img img {
@@ -342,7 +343,6 @@
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        width: 49%;
     }
 
     .product-top-right span {
