@@ -5,7 +5,6 @@
     body {
       background: #eee;
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
       color:#000;
       margin: 0;
       padding: 0;
@@ -188,9 +187,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      width: 61%;
       margin-left: 0.5rem;
-      justify-content: space-around;
     }
 
     .second-product-header-container div {
@@ -199,11 +196,13 @@
       background-size: 100% 100%;
       width: 0.6rem;
       height: 0.6rem;
+      margin-right: 10px;
     }
 
     .second-product-header h5 {
           font-size: 0.4rem;
           color: gray;
+          margin-right: 10px;
     }
 
     .second-product-header p {
@@ -266,10 +265,8 @@
     }
 
     .product-header-container {
-      width: 35%;
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
       margin-left: 0.5rem;
     }
 
@@ -277,6 +274,7 @@
       width: 0.6rem;
       height: 0.6rem;
       display: flex;
+      margin-right: 10px;
     }
 
     .product-header-container div img {
