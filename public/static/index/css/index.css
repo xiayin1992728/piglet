@@ -111,14 +111,18 @@
           height: 1.5rem;
           background: #e4dede;
           display: flex;
+          flex-direction: column;
           justify-content: center;
+          overflow: hidden;
+          position: relative;
     }
 
     .advert-carousel-container {
-      margin: 0.2rem 0 0 0;
-      width: 90%;
+      margin: 0.1rem 0 0 0.5rem;
       display: flex;
       flex-direction: row;
+      height: 1rem;
+      position: absolute;
     }
 
     .advert-carousel-img {

@@ -109,7 +109,7 @@
   </div>
 
   	<!-- 产品列表 -->
-  	<div class="product">
+	<div class="product">
   		<!-- 产品分类头 -->
   		<div class="product-header">
   			<div class="product-header-container">
@@ -156,13 +156,12 @@
   			</div>
   		</div>
   	</div>
-	
-
 {/block}
 
 {block name="js"}
 <script src="__INDEX__/js/swiper.min.js"></script>
 <script type="text/javascript">
+	// 顶部轮播
 	var swiper = new Swiper('.swiper-container',{
 		spaceBetween: 30,
       	centeredSlides: true,
@@ -171,5 +170,36 @@
         	disableOnInteraction: false,
       	},
 	});
+
+	// 滚动字幕
+	setInterval(function () {
+	    // 动画淡出元素
+        $(".advert-carousel-container").animate({
+			top:'-1.2rem',
+		}, 2000 );
+
+
+		let html = '<div class="advert-carousel-container" style="top:1.5rem">\n' +
+            '<div class="advert-carousel-img"></div>\n' +
+            '<div class="advert-carousel-text">\n' +
+            '<h5>有钱花</h5>\n' +
+            '<p>189****6307下款 60000 元成功</p>\n' +
+            '</div>\n' +
+            '</div>';
+
+		// 追加一个元素
+        $('.advert-carousel').append(html);
+
+        // 动画拉出第二个元素
+        $('.advert-carousel-container').eq(1).animate({
+            top:'0.2rem',
+        },2000);
+
+        // 删除第一个元素
+		setTimeout(function() {
+            $('.advert-carousel-container').eq(0).remove();
+		},2000);
+	},4000);
+
 </script>
 {/block}
