@@ -192,11 +192,21 @@
 			</div>
   		</div>
   	</div>
+
+	<!--活动的钱袋-->
+	<div class="money">
+		<div>
+			<img src="__INDEX__/images/money.png" alt="">
+		</div>
+		<h5>3分钟下款</h5>
+	</div>
 {/block}
 
 {block name="js"}
 <script src="__INDEX__/js/swiper.min.js"></script>
 <script type="text/javascript">
+	let n = 0;
+	let timer = 0;
 	// 顶部轮播
 	var swiper = new Swiper('.swiper-container',{
 		spaceBetween: 30,
@@ -237,5 +247,16 @@
 		},2000);
 	},4000);
 
+	// 钱袋旋转
+	setInterval(function() {
+		n = timer ? n+2 : n-2;
+		if (n == 20) {
+		    timer = 0;
+		}
+		if (n == -20) {
+		    timer = 1;
+		}
+	    $('.money').css('transform','rotate('+n+'deg)');
+	},100);
 </script>
 {/block}
