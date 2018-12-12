@@ -199,6 +199,8 @@
       width: 0.6rem;
       height: 0.6rem;
       margin-right: 10px;
+      display: flex;
+      align-items: center;  
     }
 
  .second-product-header-container div img {
