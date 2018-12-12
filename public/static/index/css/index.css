@@ -68,6 +68,7 @@
     .advert-tags-container p {
         font-size: 0.4rem;
         margin: 0;
+        color: #4e4848;
     }
 
     .advert-icon {
@@ -205,7 +206,7 @@
 
     .second-product-header h5 {
           font-size: 0.4rem;
-          color: gray;
+          color: #4e4848;
           margin-right: 10px;
     }
 
@@ -289,7 +290,7 @@
 
     .product-header-container h6 {
       font-size: 0.4rem;
-      color: gray;
+      color: #4e4848;
     }
 
     /*产品列表*/
@@ -316,6 +317,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      align-items: center;
     }
 
     .product-top-left-img {
@@ -339,6 +341,7 @@
 
     .product-top-left-text p {
       font-size: 0.4rem;
+      color: #5a5454;
     }
 
     .product-top-right {
@@ -347,6 +350,7 @@
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
+        color: #5a5454;
     }
 
     .product-top-right span {
@@ -358,7 +362,7 @@
     .product-middle {
       height: 1px;
       width: 100%;
-      background: gray;
+      background: #d2c6c6;
       margin: 5px 0;
     }
 
@@ -367,6 +371,7 @@
       flex-direction: row;
       font-size: 0.4rem;
       justify-content: space-between;
+      color: #5a5454;
     }
 
 
