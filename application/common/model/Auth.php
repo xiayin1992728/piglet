@@ -5,5 +5,10 @@ use think\Model;
 
 class Auth extends Model
 {
+    protected $table = 'auths';
 
+    public function role()
+    {
+        return $this->belongsToMany('Role','auth_role','role_id','id');
+    }
 }
