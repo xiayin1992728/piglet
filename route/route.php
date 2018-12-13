@@ -9,6 +9,8 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-Route::get('/','index/index/index');
+Route::get('','index/index/index');
+
+Route::get('product','index/product/product');
 
 

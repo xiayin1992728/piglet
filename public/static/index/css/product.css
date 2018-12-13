@@ -1,0 +1,256 @@
+body,h1,h2,h3,h4,h5,h6,div,p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #eae6e6;
+}
+/*背景图*/
+.bgimg {
+    height: 6rem;
+    width: 100%;
+    background: #07c6f3;
+}
+
+/*产品*/
+.product {
+    height: 2rem;
+    background: #eae6e6;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.product-container {
+    position: absolute;
+    top:-4rem;
+    height: 5.1rem;
+    width: 85%;
+    background: white;
+    border-radius: 0.2rem;
+    padding: 0.5rem 0.4rem 0.1rem 0.4rem;
+}
+
+.product-container-top {
+    height: 2.1rem;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.product-container-top-img {
+    width: 2.1rem;
+    margin-right: 20px;
+}
+
+.product-container-top-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.product-container-top-text {
+    font-size: 0.45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-container-top-text h5 {
+
+}
+
+.product-container-top-text p {
+    color: #796f6f;
+    margin-top:5px;
+}
+
+.product-container-top-text p span {
+    color:orangered;
+}
+
+.product-container-buttom {
+
+}
+
+.product-container-buttom p {
+    font-size: 0.45rem;
+    margin-bottom: 0.3rem;
+}
+
+.product-container-buttom p span {
+    color:cornflowerblue;
+}
+
+.product-container-buttom div {
+    color: #7d7777;
+    background: #eae6e6;
+    font-size: 0.4rem;
+    height: 0.7rem;
+    border-radius: 0.2rem;
+    text-indent: 0.4rem;
+    line-height: 0.7rem;
+}
+
+/*条件*/
+.condition {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.45rem;
+    align-items: center;
+    background: white;
+    margin-bottom: 10px;
+}
+
+.condition-header {
+    height: 1rem;
+    color: orangered;
+    line-height: 1rem;
+    text-indent: 0.5rem;
+    width: 100%;
+}
+
+.condition .line {
+    height: 1px;
+    background: #d2c4c4;
+    width: 100%;
+}
+
+.card {
+    height: 1rem;
+    line-height: 1rem;
+    text-indent: 0.5rem;
+    width: 100%;
+}
+
+.files {
+    height: 1rem;
+    line-height: 1rem;
+    text-indent: 0.5rem;
+    width: 100%;
+}
+
+/*易下款产品*/
+.easy-product {
+    margin-top:10px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.easy-product strong {
+    font-size: 0.45rem;
+    color:orangered;
+    height: 1rem;
+    line-height: 1rem;
+    text-indent: 0.5rem;
+    font-weight: 500;
+}
+
+.easy-product-container {
+    padding: 0.2rem 0.4rem 0.4rem 0.4rem;
+    font-size: 0.4rem;
+    border-top: 1px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+}
+
+/*上*/
+.easy-product-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.easy-product-top-left {
+    height: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.easy-product-top-left-img {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 15px;
+}
+
+.easy-product-top-left-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.easy-product-top-left-text h6{
+    font-size: 0.4rem;
+    font-weight: 500;
+}
+
+.easy-product-top-left-text p {
+    font-size: 0.3rem;
+    color: #7d7777;
+}
+
+.easy-product-top-right {
+    height: 100%;
+    color: #796f6f;
+}
+
+.easy-product-top-right div {
+    font-size: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    height: 1.5rem;
+    align-items: center;
+}
+
+.easy-product-top-right span {
+    color: orangered;
+}
+
+.easy-product-top-right div p {
+
+}
+
+/*中*/
+.easy-product-middle {
+    width:100%;
+    height: 1px;
+    background: gainsboro;
+    margin-bottom:5px;
+}
+
+/*下*/
+.easy-product-buttom {
+    display: flex;
+    flex-direction:column;
+    font-size: 0.3rem;
+}
+
+.easy-product-buttom .detail {
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    margin-bottom:5px;
+}
+
+.easy-product-buttom .detail span {
+    color: orangered;
+}
+
+.easy-product-buttom .detail p {
+
+}
+
+.easy-product-buttom .tag {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    color:gray;
+}
+
+
+
+
+
+
