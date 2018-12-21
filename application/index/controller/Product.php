@@ -5,6 +5,10 @@ use think\Controller;
 
 class Product extends Controller
 {
+    protected $middleware = [
+            'user'
+    ];
+
     public function product ()
     {
         $name = '有钱花';
