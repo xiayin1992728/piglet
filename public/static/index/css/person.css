@@ -47,7 +47,7 @@ body {
     height: 0.5rem;
 }
 
-.item {
+.container .item {
     height: 1rem;
     background: white;
     display: flex;
