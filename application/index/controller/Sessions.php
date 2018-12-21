@@ -17,6 +17,11 @@ class Sessions extends Controller
         return $this->fetch();
     }
 
+    public function message()
+    {
+        return $this->fetch();
+    }
+
     /**
      * 显示创建资源表单页.
      *

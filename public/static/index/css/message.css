@@ -1,0 +1,67 @@
+body,p,h4,h5,input {
+    margin: 0;
+    padding: 0;
+}
+
+input,button,a:focus {
+    outline: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #ded9d9;
+    position: relative;
+}
+
+.container .content {
+    height: 50vw;
+    width: 90vw;
+    position: absolute;
+    top:50vw;
+    left:5vw;
+    background: white;
+}
+
+.content h4 {
+    color: #007DDB;
+    text-align: center;
+    height: 10vw;
+    line-height: 10vw;
+}
+
+.form {
+    padding:5vw;
+}
+
+.form-group {
+    height: 10vw;
+}
+
+.form-group input {
+    height: 100%;
+    width: 70vw;
+    border-radius: 3vw;
+    text-indent: 3vw;
+    border:1px solid gray;
+}
+
+.btn {
+    margin-top: 5vw;
+}
+
+.btn button {
+    height: 10vw;
+    width: 70vw;
+    font-size: 5vw;
+    color: white;
+    background:#07c6f3 ;
+    border:0;
+    border-radius: 3vw;
+}
+

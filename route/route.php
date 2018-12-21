@@ -15,6 +15,8 @@ Route::get('products','index/product/product');
 
 Route::resource('person','index/user')->only(['index','edit','update','create','save']);
 Route::resource('index/login','index/sessions')->only(['index']);
+Route::get('index/message','index/sessions/message');
+Route::post('index/message','index/sessions/validateMessage');
 
 /*后台*/
 // 产品
