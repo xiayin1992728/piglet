@@ -113,15 +113,15 @@ $(function () {
         if($(this).children('.sub-menu').length){
             if($(this).hasClass('open')){
                 $(this).removeClass('open');
-                $(this).find('.nav_right').html('&#xe697;');
+                $(this).find('.nav_right').html('&#xe602;');
                 $(this).children('.sub-menu').stop().slideUp();
                 $(this).siblings().children('.sub-menu').slideUp();
             }else{
                 $(this).addClass('open');
-                $(this).children('a').find('.nav_right').html('&#xe6a6;');
+                $(this).children('a').find('.nav_right').html('&#xe602;');
                 $(this).children('.sub-menu').stop().slideDown();
                 $(this).siblings().children('.sub-menu').stop().slideUp();
-                $(this).siblings().find('.nav_right').html('&#xe697;');
+                $(this).siblings().find('.nav_right').html('&#xe602;');
                 $(this).siblings().removeClass('open');
             }
         }else{
@@ -195,6 +195,54 @@ function x_admin_show(title,url,w,h){
 function x_admin_close(){
     var index = parent.layer.getFrameIndex(window.name);
     parent.layer.close(index);
+}
+
+/*批量删除*/
+function delAll (url) {
+
+    var data = tableCheck.getData();
+
+    console.log(data);
+    layer.confirm('确认要删除吗？'+data,function(index){
+        //捉到所有被选中的，发异步进行删除
+        $.ajax({
+           url:url,
+           type:'delete',
+           data:{ids:data},
+            dataType:'json',
+            success:function (res) {
+                if (res.status == 200) {
+                    layer.msg(res.msg, {icon: 6});
+                    $(".layui-form-checked").not('.header').parents('tr').remove();
+                } else {
+                    layer.msg(res.msg, {icon: 5});
+                }
+            }
+        });
+    });
+}
+
+/*删除*/
+function del(obj,id,url){
+    layer.confirm('确认要删除吗？',function(index){
+        //发异步删除数据
+        console.log(url);
+        $.ajax({
+           url:url,
+           //data:{id:id},
+           type:'DELETE',
+           dataType:'json',
+           success:function(res) {
+               console.log(res);
+               if (res.status == 200) {
+                   $(obj).parents("tr").remove();
+                   layer.msg(res.msg,{icon:6,time:1000});
+               }else {
+                   layer.msg(res.msg,{icon:5});
+               }
+           }
+        });
+    });
 }
 
 

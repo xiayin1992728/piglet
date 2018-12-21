@@ -1,0 +1,59 @@
+{extend name="public/app" /}
+{block name="title"}<title>个人中心</title>{/block}
+{block name="css"}
+<link rel="stylesheet" href="__INDEX__/css/person.css">
+{/block}
+
+{block name="content"}
+<div class="container">
+    <a href="">
+        <div class="header">
+            <div class="left">
+                <div>
+                    <img src="__INDEX__/images/person/1.jpg" alt="">
+                </div>
+                <span>asdada</span>
+            </div>
+            <p class="arrow"></p>
+        </div>
+    </a>
+    <a href="#">
+        <div class="item">
+            <div class="img-text">
+                <div>
+                    <img src="__INDEX__/images/person/loan.png" alt="">
+                </div>
+                <span>我的贷款</span>
+            </div>
+            <p class="arrow"></p>
+        </div>
+    </a>
+    <a href="#">
+        <div class="item">
+
+            <div class="img-text">
+                <div>
+                    <img src="__INDEX__/images/person/setting.png" alt="">
+                </div>
+                <span>设置</span>
+            </div>
+            <p class="arrow"></p>
+        </div>
+    </a>
+    <a href="/logout">
+        <div class="item">
+            <div class="img-text">
+                <div>
+                    <img src="__INDEX__/images/person/logout.png" alt="">
+                </div>
+                <span>退出</span>
+            </div>
+            <p class="arrow"></p>
+        </div>
+    </a>
+</div>
+{/block}
+
+{block name="js"}
+
+{/block}

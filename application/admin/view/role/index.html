@@ -1,0 +1,55 @@
+{include file='public/meta' /}
+<body>
+<div class="x-body">
+    <xblock>
+        <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>-->
+        {if Session::get('admin','admin')->can('角色添加')}<button class="layui-btn" onclick="x_admin_show('添加角色','/role/create')"><i class="layui-icon"></i>添加</button>{/if}
+        <button class="layui-btn" style="position: relative;left: 96%;" onclick="location.href='role'"><i class="layui-icon">&#xe9aa;</i></button>
+    </xblock>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>
+                <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+            </th>
+            <th>ID</th>
+            <th>角色名</th>
+            <th>拥有权限</th>
+            <th>加入时间</th>
+            <th>操作</th>
+        </thead>
+        <tbody>
+        {foreach $roles as $key=>$vo}
+            <tr>
+            <td>
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$vo->id}'><i class="layui-icon">&#xe605;</i></div>
+            </td>
+            <td>{$vo->id}</td>
+            <td>{$vo->name}</td>
+            <td width="600">{$vo->getName()}</td>
+            <td>{$vo->create_time}</td>
+                <td class="td-manage">
+                    {if Session::get('admin','admin')->can('角色修改')}
+                    <a title="编辑"  onclick="x_admin_show('编辑','/role/{$vo->id}/edit')" href="javascript:;">
+                        <i class="layui-icon">&#xe642;</i>
+                    </a>
+                    {/if}
+                    {if Session::get('admin','admin')->can('角色删除')}
+                        <a title="删除" onclick="del(this,'{$vo->id}','/role/{$vo->id}')" href="javascript:;">
+                            <i class="layui-icon">&#xe640;</i>
+                        </a>
+                    {/if}
+                </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    <div class="page">
+        {$roles|raw}
+    </div>
+
+</div>
+{include file="public/footer" /}
+</body>
+
+</html>

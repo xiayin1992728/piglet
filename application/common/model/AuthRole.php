@@ -1,9 +1,9 @@
 <?php
 namespace app\common\model;
 
-use think\Model;
+use think\model\Pivot;
 
-class AuthRole extends Model
+class AuthRole extends Pivot
 {
 
 }

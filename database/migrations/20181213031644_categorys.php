@@ -29,7 +29,7 @@ class Categorys extends Migrator
     public function change()
     {
         // create the table
-        $table = $this->table('categorys',array('engine'=>'MyISAM'));
+        $table = $this->table('categorys',array('engine'=>'InnoDB'));
         $table->addColumn('name', 'string',array('limit' => 40,'default'=>'','comment'=>'分类名称'))
             ->addColumn('create_time','datetime',array('comment' => '创建时间'))
             ->addColumn('update_time','timestamp',array('comment' => '修改时间'))

@@ -29,7 +29,7 @@ class AuthRole extends Migrator
     public function change()
     {
         // create the table
-        $table = $this->table('auth_role',array('engine'=>'MyISAM'));
+        $table = $this->table('auth_role',array('engine'=>'InnoDB'));
         $table->addColumn('role_id', 'integer',array('limit' => 10,'comment'=>'角色外键'))
             ->addColumn('auth_id','integer',array('limit' => 10,'comment' => '权限外键'))
             //->addIndex(array('username'), array('unique' => true))

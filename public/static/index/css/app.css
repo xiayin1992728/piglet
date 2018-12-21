@@ -1,0 +1,51 @@
+body,p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    position: fixed;
+    bottom: 0;
+    background: #f9f8f8;
+    width: 100%;
+    border-top:1px solid #e4dddd;
+    height: 1.2rem;
+}
+
+.menu-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-container a {
+    text-decoration: none;
+    color: gray;
+}
+
+.menu-container .item a{
+    font-size: 0.3rem;
+    color: gray;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-container .item div{
+    width: 0.6rem;
+    height: 0.6rem;
+}
+
+.menu-container .item div img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-container .active {
+    color: #6A98F8;
+}
+

@@ -29,7 +29,7 @@ class Roles extends Migrator
     public function change()
     {
         // create the table
-        $table = $this->table('roles',array('engine'=>'MyISAM'));
+        $table = $this->table('roles',array('engine'=>'InnoDB'));
         $table->addColumn('name', 'char',array('limit' => 20,'default'=>'','comment'=>'角色名称'))
             ->addColumn('create_time','datetime',array('comment' => '创建时间'))
             ->addColumn('update_time','timestamp',array('comment' => '修改时间'))

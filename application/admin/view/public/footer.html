@@ -1,0 +1,17 @@
+<script src="__ADMIN__/lib/layui/layui.js" charset="utf-8"></script>
+<script src="__ADMIN__/js/jquery.min.js"></script>
+<script type="text/javascript" src="__ADMIN__/js/xadmin.js"></script>
+<script>
+    $('#logout').on('click',function(){
+        $.ajax({
+            url:'/logout',
+            type:'post',
+            dataType:'json',
+            success:function(res) {
+                if (res.status == 200) {
+                    location.href = '/login';
+                }
+            }
+        })
+    })
+</script>

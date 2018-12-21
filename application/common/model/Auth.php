@@ -9,6 +9,7 @@ class Auth extends Model
 
     public function role()
     {
-        return $this->belongsToMany('Role','auth_role','role_id','id');
+        return $this->belongsToMany('Role','auth_role','role_id','auth_id');
     }
+
 }

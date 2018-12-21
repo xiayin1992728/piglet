@@ -1,0 +1,29 @@
+<!-- 左侧菜单开始 -->
+<div class="left-nav">
+    <div id="side-nav">
+        <ul id="nav">
+    {foreach $menu as $key => $vo}
+    {if $vo->auth_parent == 0 }
+                <li>
+                    <a href="javascript:;">
+                        <i class="iconfont {$vo->auth_icon}"></i>
+                        <cite>{$vo->name}</cite>
+                        <i class="iconfont nav_right">&#xe602;</i>
+                    </a>
+                    {foreach :model('Auth')->where(['auth_parent'=>$vo->id,'auth_icon' => $vo->id])->select() as $k => $v }
+                        <ul class="sub-menu">
+                        <li>
+                            <a _href="{$v->auth_url}">
+                                <i class="iconfont">&#xe602;</i>
+                                <cite>{$v->name}</cite>
+                            </a>
+                        </li >
+                    </ul>
+                    {/foreach}
+                </li>
+    {/if}
+    {/foreach}
+        </ul>
+    </div>
+</div>
+<!-- 左侧菜单结束 -->

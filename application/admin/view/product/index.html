@@ -1,0 +1,65 @@
+{include file="public/meta" /}
+<body>
+<div class="x-body">
+    <xblock>
+        <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>-->
+        {if Session::get('admin','admin')->can('产品添加')}<button class="layui-btn" onclick="x_admin_show('添加产品','product/create','1000','550')"><i class="layui-icon"></i>添加</button>{/if}
+        <button class="layui-btn" style="position: relative;left: 88%;" onclick="location.href='product'"><i class="layui-icon">&#xe9aa;</i></button>
+    </xblock>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th>
+                <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+            </th>
+            <th>ID</th>
+            <th>名称</th>
+            <th>图片</th>
+            <th>链接</th>
+            <th>额度</th>
+            <th>分类</th>
+            <th>修改时间</th>
+            <th>操作</th>
+        </thead>
+        <tbody>
+        {foreach $products as $product}
+            <tr>
+            <td>
+                <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$product->id}'><i class="layui-icon">&#xe605;</i></div>
+            </td>
+            <td>{$product->id}</td>
+            <td>{$product->name}</td>
+                <td><img src="{$product->product_icon}" alt="" width="50" height="50"></td>
+            <td>{$product->product_url}</td>
+            <td>{$product->money}</td>
+                <td>{$product->getName()}</td>
+            <td>{$product->update_time}</td>
+            <td class="td-manage">
+                {if Session::get('admin','admin')->can('产品查看')}
+                <a title="查看" onclick="x_admin_show('查看','product/{$product->id}')" href="javascript:;">
+                    <i class="layui-icon"></i>
+                </a>
+                {/if}
+                {if Session::get('admin','admin')->can('产品修改')}
+                <a title="编辑"  onclick="x_admin_show('编辑','product/{$product->id}/edit')" href="javascript:;">
+                    <i class="layui-icon">&#xe642;</i>
+                </a>
+                {/if}
+                {if Session::get('admin','admin')->can('产品删除')}
+                <a title="删除" onclick="del(this,'{$product->id}','product/{$product->id}')" href="javascript:;">
+                    <i class="layui-icon">&#xe640;</i>
+                </a>
+                {/if}
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    <div class="page">
+        {$products|raw}
+    </div>
+
+</div>
+</body>
+{include file="public/footer" /}
+</html>

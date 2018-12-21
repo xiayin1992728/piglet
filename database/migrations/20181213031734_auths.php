@@ -29,10 +29,11 @@ class Auths extends Migrator
     public function change()
     {
         // create the table
-        $table = $this->table('auths',array('engine'=>'MyISAM'));
+        $table = $this->table('auths',array('engine'=>'InnoDB'));
         $table->addColumn('name', 'string',array('limit' => 40,'default'=>'','comment'=>'权限名称'))
             ->addColumn('auth_parent','integer',array('limit' => 10,'comment' => '权限父级'))
-            ->addColumn('auth_icon','string',array('limit' => '50','default'=>'','comment' => '权限字体图标'))
+            ->addColumn('auth_icon','string',array('limit' => 50,'default'=>'','comment' => '权限字体图标'))
+            ->addColumn('auth_url','string',array('limit' =>255,'null' => true,'comment' => '路由'))
             ->addColumn('create_time','datetime',array('comment' => '创建时间'))
             ->addColumn('update_time','timestamp',array('comment' => '修改时间'))
             ->addColumn('delete_time','integer',array('limit' => 10,'null' => true,'comment' => '软删除'))

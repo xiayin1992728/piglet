@@ -6,14 +6,7 @@
       background: #eee;
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
       color:#000;
-      margin: 0;
-      padding: 0;
     }
- p,h1,h2,h3,h4,h5,h6 {
-  margin: 0;
-  padding: 0;
- }   
-
     /*顶部轮播*/
     .swiper-container {
       width: 100%;
@@ -81,6 +74,7 @@
       flex-direction: column;
       width: 2rem;
       align-items: center;
+      cursor: pointer;
     }
 
     .advert-tags-container-left div {

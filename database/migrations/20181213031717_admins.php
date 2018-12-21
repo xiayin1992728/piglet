@@ -29,7 +29,7 @@ class Admins extends Migrator
     public function change()
     {
         // create the table
-        $table = $this->table('admins',array('engine'=>'MyISAM'));
+        $table = $this->table('admins',array('engine'=>'InnoDB'));
         $table->addColumn('name', 'string',array('limit' => 40,'default'=>'','comment'=>'用户名称'))
             ->addColumn('role_id','integer',array('limit' => 10,'comment' => '角色外键'))
             ->addColumn('password','string',array('limit' => 64,'comment' => '密码'))

@@ -29,20 +29,21 @@ class Products extends Migrator
     public function change()
     {
         // create the table
-        $table = $this->table('products',array('engine'=>'MyISAM'));
+        $table = $this->table('products',array('engine'=>'InnoDB'));
         $table->addColumn('name', 'string',array('limit' => 40,'comment'=>'产品名称'))
-            ->addColumn('category_id','integer',array('limit'=>10,'comment' => '分类外键'))
+            ->addColumn('category_id','integer',array('limit'=>10,'null' => true,'comment' => '分类外键'))
             ->addColumn('money', 'decimal',array('limit' => [10,2],'comment'=>'可借额度'))
-            ->addColumn('loan_time', 'datetime',array('comment'=>'放款时间'))
+            ->addColumn('money_section','string',array('limit' => 60,'comment' => '额度范围'))
+            ->addColumn('loan_time', 'string',array('limit' => '40','default'=> '7','comment'=>'放款时间'))
             ->addColumn('interest_rate', 'char',array('limit' => 20,'comment'=>'利率'))
-            ->addColumn('loan_period', 'char',array('limit' => 15,'comment'=>'贷款期限'))
+            ->addColumn('loan_period', 'string',array('limit' => 40,'comment'=>'贷款期限'))
+            ->addColumn('period_section','string',array('limit' => 60,'comment' => '贷款时间区间'))
             ->addColumn('product_icon', 'string',array('limit' =>255 ,'comment'=>'产品图标'))
             ->addColumn('loan_record', 'char',array('limit' => 15,'comment'=>'下款人数统计'))
-            ->addColumn('product_tag','string',array('limit' => 40,'comment' => '产品标签'))
-            ->addColumn('pass_rate','char',array('limit' => 20,'comment' => '通过率'))
-            ->addColumn('new_product','integer',array('comment' => '新产品标识'))
+            ->addColumn('product_introduction','string',array('limit' => 40,'comment' => '产品标签'))
             ->addColumn('product_url','string',array('limit' => 255,'comment' => '产品url'))
             ->addColumn('identity','string',array('limit' => 50,'comment' => '身份证明'))
+            ->addColumn('card','string',array('limit' => 60,'comment' => '身份'))
             ->addColumn('auxiliary','string',array('limit' => 50,'comment' => '辅助文件'))
             ->addColumn('require_age','char',array('limit' => 15,'default'=>'','comment' => '年龄要求'))
             ->addColumn('sesame','integer',array('limit' => 4,'default' => 0,'comment' => '芝麻信用'))

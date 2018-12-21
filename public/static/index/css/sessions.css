@@ -1,0 +1,120 @@
+body,p,input,span,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+
+button,input,textarea,select,a:focus {
+    outline: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: #e0dede;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    padding: 0 2vw;
+    justify-content: space-around;
+    background: white;
+    height: 15vw;
+    align-items: center;
+    color: gray;
+}
+
+.active a {
+    color: #1E9FFF !important;
+}
+
+.header a {
+    text-decoration: none;
+    color:gray;
+}
+
+.form {
+    height: 50vw;
+    width: 90vw;
+    margin-top:35vw;
+    margin-left: 5vw;
+    background: white;
+    padding: 5vw 0;
+}
+
+.form-group {
+    height: 15vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 2vw;
+}
+
+.form-group label {
+    height: 10vw;
+    line-height: 10vw;
+}
+
+.form-group input {
+    height: 10vw;
+    border-radius: 3vw;
+    border:1px solid gray;
+    overflow: hidden;
+    text-indent: 4vw;
+}
+
+#phone {
+    width: 68vw;
+}
+
+#verify {
+    width: 37vw;
+    height: 10vw;
+    border:0;
+}
+
+.form-control {
+    border:1px solid gray;
+    border-radius: 2vw;
+    height: 10vw;
+}
+
+.form-control span{
+    display: inline-block;
+    position: relative;
+    width: 30vw;
+}
+
+.form-control span img {
+    width: 95%;
+    position: absolute;
+    top:-6.2vw;
+    left: 1.5vw;
+    border-radius: 2vw;
+    height: 10vw;
+    border:0;
+}
+
+.getcode {
+    padding:0 2vw;
+    margin-top: 5vw;
+    display: flex;
+    justify-content: center;
+}
+
+.getcode button {
+    height: 9vw;
+    width: 68vw;
+    background: #72b8ef;
+    color: white;
+    font-size: 1vw;
+    padding: 1vw 2vw;
+    border:0;
+    border-radius: 1vw;
+}

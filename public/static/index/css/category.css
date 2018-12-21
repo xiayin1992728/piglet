@@ -1,0 +1,257 @@
+body {
+    background: #e0dada;
+}
+
+/*容器样式*/
+.container {
+
+}
+/*容器样式结束*/
+
+/*头部样式开始*/
+.header {
+    margin:0.3rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header .category {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    width:8.5rem;
+    justify-content: space-around;
+    height: 1.2rem;
+    align-items: center;
+}
+
+.header .category .one {
+    margin-left: 0.2rem;
+}
+
+.header .category div {
+    font-size: 0.4rem;
+    color: #7d7878;
+}
+
+.header .category .active {
+    color: #4882f5;
+    border-bottom:0.08rem solid #4882f5;
+}
+
+.header .filter {
+    font-size: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 1.2rem;
+    width: 1rem;
+    background: white;
+    align-items: center;
+}
+
+.header .filter-block {
+    font-size: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 1.2rem;
+    width: 1rem;
+    background: white;
+    align-items: center;
+    position: fixed;
+    left:9rem;
+}
+
+.header .filter-btn p {
+    width: 25px;
+    height: 20px;
+    background: url('/static/index/images/category/filter.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.header .filter-btn span {
+    color: orange;
+}
+
+.header .filter-form {
+    height: 14.4rem;
+    width: 7rem;
+    background: white;
+    position: fixed;
+    display: none;
+    z-index: 99;
+    top:1.5rem;
+    left:3rem;
+}
+
+.filter-form-money,.filter-form-time,.filter-form-card {
+    margin-left:0.5rem;
+    margin-top:0.3rem;
+    height: 28%;
+}
+
+.filter-form-money h5,.filter-form-time h5,.filter-form-card h5{
+    color: #7d7777;
+    margin-bottom:0.2rem;
+}
+
+.filter-form-money div,.filter-form-time div,.filter-form-card div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.filter-form-money div p,.filter-form-time div p,.filter-form-card div p{
+    width: 2rem;
+    cursor: default;
+    text-align: center;
+    border-radius: 0.2rem;
+    margin:0.2rem 0.1rem 0.2rem 0;
+    border:1px solid #ccc6c6;
+    color: #ccc6c6;
+    font-size: 0.2rem;
+}
+
+.filter-form-active {
+    background: #7d7777;
+    color: white !important;
+}
+
+.filter-form-btn {
+    display: flex;
+    flex-direction: row;
+    height: 1.4rem;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    align-items: center;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.filter-form-btn .yes,.filter-form-btn .reset{
+    width:2.7rem;
+    height: 0.8rem;
+    background: orangered;
+    line-height: 0.8rem;
+    text-align: center;
+    border-radius: 0.3rem;
+    color: white;
+}
+
+
+/*头部样式结束*/
+
+
+/*产品样式开始*/
+.product-container {
+    display: flex;
+    flex-direction: column;
+    height: 3.2rem;
+    justify-content: center;
+    background: white;
+    padding: 5px 0.5rem;
+    margin-top:0.1rem;
+}
+
+.product-container-top {
+    margin-top:5px;
+}
+
+.product-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.product-top-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.product-top-left-img {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    margin-right: 10px;
+}
+
+.product-top-left-img img {
+    width: 100%;
+}
+
+.product-top-left-text {
+
+}
+
+.product-top-left-text h4 {
+    font-size: 0.4rem;
+}
+
+.product-top-left-text p {
+    font-size: 0.4rem;
+    color: #5a5454;
+}
+
+.product-top-right {
+    font-size: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: #5a5454;
+}
+
+.product-top-right span {
+    color:orange;
+    display: flex;
+    align-items: center;
+}
+
+.product-middle {
+    height: 1px;
+    width: 100%;
+    background: #d2c6c6;
+    margin: 5px 0;
+}
+
+.product-buttom {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.4rem;
+    justify-content: space-between;
+    color: #5a5454;
+}
+
+.product-buttom-left p span{
+    color: orange;
+}
+
+.product-buttom-right {
+
+}
+
+.product-tag {
+    height: 0.5rem;
+    font-size: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    color: #1E9FFF;
+    margin-top: 0.2rem;
+}
+
+.product-tag div {
+    border:1px solid #1E9FFF;
+    margin-right: 0.2rem;
+    border-radius: 0.1rem;
+    height: 0.5rem;
+    padding: 0 5px;
+    line-height: 0.5rem;
+}
+
+/*产品样式结束*/

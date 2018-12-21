@@ -14,6 +14,14 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
+        $time = date('Y-m-d H:i:s');
+        $data = [
+            [
+                'name' => '管理员',
+                'create_time' => $time,
+            ]
+        ];
 
+        $this->table('roles')->insert($data)->save();
     }
 }
