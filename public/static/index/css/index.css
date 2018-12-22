@@ -226,7 +226,6 @@
     }
 
     .second-product-container {
-        width: 1.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -239,11 +238,13 @@
 
     .second-product-container div img {
       width: 100%;
+      height: 100%;
     }
 
     .second-product-container p {
         font-size: 0.4rem;
         color: #585050;
+        margin-top: 0.2rem;
     }
 
     .second-product-list .line {

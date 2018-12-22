@@ -11,12 +11,13 @@
 
 /*前台*/
 Route::get('/','index/index/index');
-Route::get('products','index/product/product');
+Route::get('products/:id','index/product/product');
 
 Route::resource('person','index/user')->only(['index','edit','update','create','save']);
 Route::resource('index/login','index/sessions')->only(['index']);
-Route::get('index/message','index/sessions/message');
-Route::post('index/message','index/sessions/validateMessage');
+Route::post('index/message','index/sessions/message');
+Route::delete('index/logout','index/sessions/delete');
+Route::post('index/messagevalidate','index/sessions/messagevalidate');
 
 /*后台*/
 // 产品

@@ -9,56 +9,7 @@
 </head>
 <body>
 {block name="content"}{/block}
-<!--底部菜单-->
-<div class="menu">
-	<div class="menu-container">
-		<div class="home item">
-			<a href="/">
-			{if request()->url() == '/'}
-			<div>
-				<img src="__INDEX__/images/menu/homeActive.png" alt="">
-			</div>
-			<span class="active">主页</span>
-			{else /}
-			<div>
-				<img src="__INDEX__/images/menu/home.png" alt="">
-			</div>
-			<span>主页</span>
-			{/if}
-			</a>
-		</div>
-		<div class="all item">
-			<a href="/categorys">
-			{if request()->url() == '/categorys' }
-			<div>
-				<img src="__INDEX__/images/menu/categoryActive.png" alt="">
-			</div>
-			<span class="active">分类</span>
-			{else /}
-			<div>
-				<img src="__INDEX__/images/menu/category.png" alt="">
-			</div>
-			<span>分类</span>
-			{/if}
-			</a>
-		</div>
-		<div class="person item">
-			<a href="/person">
-			{if request()->url() == '/person'}
-			<div>
-				<img src="__INDEX__/images/menu/personActive.png" alt="">
-			</div>
-			<span class="active">个人中心</span>
-			{else /}
-			<div>
-				<img src="__INDEX__/images/menu/person.png" alt="">
-			</div>
-			<span>个人中心</span>
-			{/if}
-			</a>
-		</div>
-	</div>
-</div>
+
 </body>
 <script src="__INDEX__/js/jquery.js"></script>
 {block name="js"}{/block}

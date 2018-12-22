@@ -13,11 +13,12 @@
         <div class="content">
             <h4>请输入短信验证码</h4>
             <hr/>
-            <form action="" class="form">
+            <form action="/index/messagevalidate" method="POST" class="form">
+                {include file="public/_message" /}
                 <div class="form-group">
-                    <input type="text" placeholder="请输入短信验证码">
+                    <input type="text" name="value" placeholder="请输入短信验证码">
                 </div>
-
+                <input type="hidden" name="key" value="{$key}">
                 <div class="btn">
                     <button type="submit">登录</button>
                 </div>

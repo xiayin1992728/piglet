@@ -3,6 +3,10 @@ body,p,h1,h2,h3,h4,h5,h6 {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .menu {
     position: fixed;
     bottom: 0;
@@ -48,4 +52,5 @@ body,p,h1,h2,h3,h4,h5,h6 {
 .menu-container .active {
     color: #6A98F8;
 }
+
 

@@ -46,7 +46,7 @@ body {
 .form-group input {
     height: 100%;
     width: 70vw;
-    border-radius: 3vw;
+    border-radius: 5vw;
     text-indent: 3vw;
     border:1px solid gray;
 }
@@ -62,6 +62,20 @@ body {
     color: white;
     background:#07c6f3 ;
     border:0;
+    border-radius: 4vw;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
+    color: white;
+}
+.error h6 {
+    width: 68vw;
+    background: #ef9595;
+    text-align: center;
     border-radius: 3vw;
 }
 

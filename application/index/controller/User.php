@@ -4,14 +4,15 @@ namespace app\index\controller;
 
 use think\Controller;
 use think\Request;
+use think\facade\Session;
 
 class User extends Controller
 {
 
-    public function login()
-    {
-        return $this->fetch();
-    }
+    protected $middleware = [
+        'user' => ['only' => ['index','delete']]
+    ];
+
     /**
      * 显示资源列表
      *
@@ -19,6 +20,8 @@ class User extends Controller
      */
     public function index()
     {
+        $user = Session::get('user','user');
+        $this->assign('user',$user);
         return $this->fetch();
     }
 

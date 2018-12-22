@@ -6,52 +6,93 @@
 
 {block name="content"}
 <div class="container">
-    <a href="">
-        <div class="header">
-            <div class="left">
-                <div>
-                    <img src="__INDEX__/images/person/1.jpg" alt="">
+    {if $user}
+        <a href="">
+            <div class="header">
+                <div class="left">
+                    <div>
+                        <img src="{:env('APP_URL').$user['avatar']}" alt="">
+                    </div>
+                    <span>{$user.name}</span>
                 </div>
-                <span>asdada</span>
+                <p class="arrow"></p>
             </div>
-            <p class="arrow"></p>
-        </div>
-    </a>
-    <a href="#">
-        <div class="item">
-            <div class="img-text">
-                <div>
-                    <img src="__INDEX__/images/person/loan.png" alt="">
+        </a>
+        <a href="#">
+            <div class="item">
+                <div class="img-text">
+                    <div>
+                        <img src="__INDEX__/images/person/loan.png" alt="">
+                    </div>
+                    <span>我的贷款</span>
                 </div>
-                <span>我的贷款</span>
+                <p class="arrow"></p>
             </div>
-            <p class="arrow"></p>
-        </div>
-    </a>
-    <a href="#">
-        <div class="item">
+        </a>
+        <a href="#">
+            <div class="item">
 
-            <div class="img-text">
-                <div>
-                    <img src="__INDEX__/images/person/setting.png" alt="">
+                <div class="img-text">
+                    <div>
+                        <img src="__INDEX__/images/person/setting.png" alt="">
+                    </div>
+                    <span>设置</span>
                 </div>
-                <span>设置</span>
+                <p class="arrow"></p>
             </div>
-            <p class="arrow"></p>
-        </div>
-    </a>
-    <a href="/logout">
-        <div class="item">
-            <div class="img-text">
-                <div>
-                    <img src="__INDEX__/images/person/logout.png" alt="">
+        </a>
+        <a href="#">
+            <form action="{:url('/index/logout')}" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+            <div class="item" onclick="$('form').submit()">
+                <div class="img-text">
+                    <div>
+                        <img src="__INDEX__/images/person/logout.png" alt="">
+                    </div>
+                    <span>退出</span>
                 </div>
-                <span>退出</span>
+                <p class="arrow"></p>
             </div>
-            <p class="arrow"></p>
-        </div>
-    </a>
+            </form>
+        </a>
+    {else /}
+        <a href="/index/login">
+            <div class="header">
+                <div class="left">
+                    <div>
+                        <img src="__INDEX__/images/person/default.png" alt="">
+                    </div>
+                    <span>未登录</span>
+                </div>
+                <p class="arrow"></p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="item">
+                <div class="img-text">
+                    <div>
+                        <img src="__INDEX__/images/person/loan.png" alt="">
+                    </div>
+                    <span>我的贷款</span>
+                </div>
+                <p class="arrow"></p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="item">
+
+                <div class="img-text">
+                    <div>
+                        <img src="__INDEX__/images/person/setting.png" alt="">
+                    </div>
+                    <span>设置</span>
+                </div>
+                <p class="arrow"></p>
+            </div>
+        </a>
+    {/if}
 </div>
+{include file="public/_menu" /}
 {/block}
 
 {block name="js"}

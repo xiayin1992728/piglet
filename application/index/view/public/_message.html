@@ -1,0 +1,8 @@
+{foreach ['error','success'] as $msg}
+    {if Session::has($msg,'user') }
+        <div class="{$msg}">
+            <span></span>
+            <h6>{:Session::get($msg)}</h6>
+        </div>
+    {/if}
+{/foreach}

@@ -63,7 +63,7 @@ body {
 
 .form-group input {
     height: 10vw;
-    border-radius: 3vw;
+    border-radius: 5vw;
     border:1px solid gray;
     overflow: hidden;
     text-indent: 4vw;
@@ -81,25 +81,26 @@ body {
 
 .form-control {
     border:1px solid gray;
-    border-radius: 2vw;
+    border-radius: 5vw;
     height: 10vw;
 }
 
-.form-control span{
-    display: inline-block;
-    position: relative;
+.form-group .captcha {
+    display: flex;
+    flex-direction: row;
+}
+
+#img {
     width: 30vw;
+    height: 100%;
 }
 
-.form-control span img {
-    width: 95%;
-    position: absolute;
-    top:-6.1vw;
-    left: 1.5vw;
-    border-radius: 3vw;
-    height: 10vw;
-    border:0;
+#img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5vw;
 }
+
 
 .getcode {
     padding:0 2vw;
@@ -116,5 +117,19 @@ body {
     font-size: 4vw;
     padding: 1vw 2vw;
     border:0;
-    border-radius: 1vw;
+    border-radius: 4vw;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
+    color: white;
+}
+.error h6 {
+    width: 68vw;
+    background: #ef9595;
+    text-align: center;
+    border-radius: 3vw;
 }

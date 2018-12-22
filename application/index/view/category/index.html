@@ -71,21 +71,23 @@
         <!--内容主体开始-->
         <div class="content">
             <!--产品列表开始-->
-            <div class="product-container">
+            {if !empty($products) }
+                {foreach $products as $product}
+                <div class="product-container">
                 <div class="product-top">
                     <div class="product-top-left">
                         <div class="product-top-left-img">
-                            <img src="/uploads/products/jie.jpg">
+                            <img src="{:env('APP_URL').$product->product_icon}">
                         </div>
 
                         <div class="product-top-left-text">
-                            <h4>有钱花</h4>
-                            <p>极速审批，黑白均下款</p>
+                            <h4>{$product->name}</h4>
+                            <p>{$product->product_introduction}</p>
                         </div>
                     </div>
 
                     <div class="product-top-right">
-                        <span>8000</span>
+                        <span>{$product->loan_record}</span>
                         <p>人已下款</p>
                     </div>
                 </div>
@@ -94,201 +96,31 @@
 
                 <div class="product-buttom">
                     <div class="product-buttom-left">
-                        <p>可借额度：<span>2000</span></p>
-                        <p>最快20分钟下款</p>
+                        <p>可借额度：<span>{$product->money}</span></p>
+                        <p>最快{$product->loan_time}分钟下款</p>
                     </div>
 
                     <div class="product-buttom-right">
-                        <p>参考利率：日利率0.067%</p>
-                        <p>贷款期限：7天</p>
+                        <p>参考利率：日利率{$product->interest_rate}</p>
+                        <p>贷款期限：{$product->loan_period}天</p>
                     </div>
                 </div>
 
                 <div class="product-tag">
+                    {foreach $product->tag as $v}
                     <div>
-                        黑户下款
+                        {$v->name}
                     </div>
-                    <div>
-                        无信用要求
-                    </div>
+                    {/foreach}
                 </div>
-            </div>
-
-            <div class="product-container">
-                <div class="product-top">
-                    <div class="product-top-left">
-                        <div class="product-top-left-img">
-                            <img src="/uploads/products/jie.jpg">
-                        </div>
-
-                        <div class="product-top-left-text">
-                            <h4>有钱花</h4>
-                            <p>极速审批，黑白均下款</p>
-                        </div>
-                    </div>
-
-                    <div class="product-top-right">
-                        <span>8000</span>
-                        <p>人已下款</p>
-                    </div>
                 </div>
-
-                <div class="product-middle"></div>
-
-                <div class="product-buttom">
-                    <div class="product-buttom-left">
-                        <p>可借额度：<span>2000</span></p>
-                        <p>最快20分钟下款</p>
-                    </div>
-
-                    <div class="product-buttom-right">
-                        <p>参考利率：日利率0.067%</p>
-                        <p>贷款期限：7天</p>
-                    </div>
-                </div>
-
-                <div class="product-tag">
-                    <div>
-                        黑户下款
-                    </div>
-                    <div>
-                        无信用要求
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-container">
-                <div class="product-top">
-                    <div class="product-top-left">
-                        <div class="product-top-left-img">
-                            <img src="/uploads/products/jie.jpg">
-                        </div>
-
-                        <div class="product-top-left-text">
-                            <h4>有钱花</h4>
-                            <p>极速审批，黑白均下款</p>
-                        </div>
-                    </div>
-
-                    <div class="product-top-right">
-                        <span>8000</span>
-                        <p>人已下款</p>
-                    </div>
-                </div>
-
-                <div class="product-middle"></div>
-
-                <div class="product-buttom">
-                    <div class="product-buttom-left">
-                        <p>可借额度：<span>2000</span></p>
-                        <p>最快20分钟下款</p>
-                    </div>
-
-                    <div class="product-buttom-right">
-                        <p>参考利率：日利率0.067%</p>
-                        <p>贷款期限：7天</p>
-                    </div>
-                </div>
-
-                <div class="product-tag">
-                    <div>
-                        黑户下款
-                    </div>
-                    <div>
-                        无信用要求
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-container">
-                <div class="product-top">
-                    <div class="product-top-left">
-                        <div class="product-top-left-img">
-                            <img src="/uploads/products/jie.jpg">
-                        </div>
-
-                        <div class="product-top-left-text">
-                            <h4>有钱花</h4>
-                            <p>极速审批，黑白均下款</p>
-                        </div>
-                    </div>
-
-                    <div class="product-top-right">
-                        <span>8000</span>
-                        <p>人已下款</p>
-                    </div>
-                </div>
-
-                <div class="product-middle"></div>
-
-                <div class="product-buttom">
-                    <div class="product-buttom-left">
-                        <p>可借额度：<span>2000</span></p>
-                        <p>最快20分钟下款</p>
-                    </div>
-
-                    <div class="product-buttom-right">
-                        <p>参考利率：日利率0.067%</p>
-                        <p>贷款期限：7天</p>
-                    </div>
-                </div>
-
-                <div class="product-tag">
-                    <div>
-                        黑户下款
-                    </div>
-                    <div>
-                        无信用要求
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-container">
-                <div class="product-top">
-                    <div class="product-top-left">
-                        <div class="product-top-left-img">
-                            <img src="/uploads/products/jie.jpg">
-                        </div>
-
-                        <div class="product-top-left-text">
-                            <h4>有钱花</h4>
-                            <p>极速审批，黑白均下款</p>
-                        </div>
-                    </div>
-
-                    <div class="product-top-right">
-                        <span>8000</span>
-                        <p>人已下款</p>
-                    </div>
-                </div>
-
-                <div class="product-middle"></div>
-
-                <div class="product-buttom">
-                    <div class="product-buttom-left">
-                        <p>可借额度：<span>2000</span></p>
-                        <p>最快20分钟下款</p>
-                    </div>
-
-                    <div class="product-buttom-right">
-                        <p>参考利率：日利率0.067%</p>
-                        <p>贷款期限：7天</p>
-                    </div>
-                </div>
-
-                <div class="product-tag">
-                    <div>
-                        黑户下款
-                    </div>
-                    <div>
-                        无信用要求
-                    </div>
-                </div>
-            </div>
+                {/foreach}
+            {/if}
             <!--产品列表结束-->
         </div>
         <!--内容主体结束-->
     </div>
+{include file="public/_menu" /}
 {/block}
 
 {block name="js"}
@@ -316,5 +148,10 @@
         //console.log( $(this).parent('div').children('p'));
         $(this).addClass('filter-form-active');
     });
+
+    // 切换分类
+    $('.category div').on('click',function(){
+        
+    })
 </script>
 {/block}

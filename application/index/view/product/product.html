@@ -1,6 +1,6 @@
 {extend name='public/app' /}
 
-{block name='title'}<title>{$name}</title>{/block}
+{block name='title'}<title>{$product->name}</title>{/block}
 
 {block name="css"}
 <link rel="stylesheet" href="__INDEX__/css/product.css">
@@ -20,22 +20,22 @@
         <div class="product-container-top">
             <!--图片-->
             <div class="product-container-top-img">
-                <img src="/uploads/products/jie.jpg">
+                <img src="{:env('APP_URL').$product->product_icon}">
             </div>
 
             <!--文字-->
             <div class="product-container-top-text">
-                <h5>有钱花</h5>
-                <p>申请人数：5362 人</p>
-                <p>可带额度：<span>10000</span> 元</p>
+                <h5>{$product->name}</h5>
+                <p>申请人数：{$product->loan_record} 人</p>
+                <p>可带额度：<span>{$product->money}</span> 元</p>
             </div>
         </div>
 
         <!--下部分-->
         <div class="product-container-buttom">
-            <p>借款期限：<span>7 天</span></p>
-            <p>参考利率：<span>日利率 0.03%</span></p>
-            <div>新上线平台，额度2000~20000，30秒到账。</div>
+            <p>借款期限：<span>{$product->loan_time} 天</span></p>
+            <p>参考利率：<span>日利率 {$product->interest_rate}</span></p>
+            <div>{$product->product_introduction}</div>
         </div>
     </div>
 </div>
@@ -46,107 +46,73 @@
         申请条件
     </div>
     <div class="line"></div>
-    <div class="card">身份证明：<span>身份证</span></div>
+    <div class="card">身份证明：<span>{$product->identity}</span></div>
     <div class="line" style="width: 95%"></div>
-    <div class="files">辅助文件：<span>个人信息、联系人、运营商认证</span></div>
+    <div class="files">辅助文件：<span>{$product->auxiliary}</span></div>
 </div>
 
 <!--所需材料-->
 <div class="condition">
     <div class="condition-header">
-        申请条件
+        所需材料
     </div>
     <div class="line"></div>
-    <div class="card">身份证明：<span>身份证</span></div>
+    <div class="card">年龄要求：<span>{$product->require_age}</span></div>
     <div class="line" style="width: 95%"></div>
-    <div class="files">辅助文件：<span>个人信息、联系人、运营商认证</span></div>
+    <div class="files">芝麻信用：<span>{$product->sesame}</span></div>
 </div>
 
 <!--易下款产品-->
 <div class="easy-product">
     <strong>为你推荐易下款产品</strong>
-    <!--容器-->
-    <div class="easy-product-container">
-        <!--上-->
-        <div class="easy-product-top">
-            <!--左边-->
-            <div class="easy-product-top-left">
-                <div class="easy-product-top-left-img">
-                    <img src="/uploads/products/jie.jpg">
+    {foreach $easy as $key => $vo}
+        <!--容器-->
+        <div class="easy-product-container" onclick="location.href='{$product->product_url}'">
+            <!--上-->
+            <div class="easy-product-top">
+                <!--左边-->
+                <div class="easy-product-top-left">
+                    <div class="easy-product-top-left-img">
+                        <img src="{:env('APP_URL').$vo->product_icon}">
+                    </div>
+                    <div class="easy-product-top-left-text">
+                        <h6>{$vo->name}</h6>
+                        <p>{$vo->product_introduction}</p>
+                    </div>
                 </div>
-                <div class="easy-product-top-left-text">
-                    <h6>有钱花</h6>
-                    <p>大额贷款，门槛低，易通过</p>
-                </div>
-            </div>
 
-            <!--右边-->
-            <div class="easy-product-top-right">
-                <div>
-                    <span>9328</span>
-                    <p>人已下款</p>
-                </div>
-            </div>
-        </div>
-
-        <!--中-->
-        <div class="easy-product-middle"></div>
-
-        <!--下-->
-        <div class="easy-product-buttom">
-            <div class="detail">
-                <span>5000</span>
-                <p>0.03%</p>
-                <p>10天</p>
-            </div>
-            <div class="tag">
-                <span>可借额度（元）</span>
-                <p>日利率（%）</p>
-                <p>最长可借时间</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="easy-product-container">
-        <!--上-->
-        <div class="easy-product-top">
-            <!--左边-->
-            <div class="easy-product-top-left">
-                <div class="easy-product-top-left-img">
-                    <img src="/uploads/products/jie.jpg">
-                </div>
-                <div class="easy-product-top-left-text">
-                    <h6>有钱花</h6>
-                    <p>大额贷款，门槛低，易通过</p>
+                <!--右边-->
+                <div class="easy-product-top-right">
+                    <div>
+                        <span>{$vo->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
                 </div>
             </div>
 
-            <!--右边-->
-            <div class="easy-product-top-right">
-                <div>
-                    <span>9328</span>
-                    <p>人已下款</p>
+            <!--中-->
+            <div class="easy-product-middle"></div>
+
+            <!--下-->
+            <div class="easy-product-buttom">
+                <div class="detail">
+                    <span>{$vo->money}</span>
+                    <p>{$vo->interest_rate}</p>
+                    <p>{$vo->loan_period}天</p>
+                </div>
+                <div class="tag">
+                    <span>可借额度（元）</span>
+                    <p>日利率（%）</p>
+                    <p>最长可借时间</p>
                 </div>
             </div>
         </div>
+    {/foreach}
+</div>
 
-        <!--中-->
-        <div class="easy-product-middle"></div>
-
-        <!--下-->
-        <div class="easy-product-buttom">
-            <div class="detail">
-                <span>5000</span>
-                <p>0.03%</p>
-                <p>10天</p>
-            </div>
-            <div class="tag">
-                <span>可借额度（元）</span>
-                <p>日利率（%）</p>
-                <p>最长可借时间</p>
-            </div>
-        </div>
-    </div>
+<!-- 立即申请 -->
+<div class="apply-container">
+    <a href="{$product->product_url}">立即申请</a>
 </div>
 {/block}
 
