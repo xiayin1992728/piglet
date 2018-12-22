@@ -61,7 +61,8 @@ class Sessions extends Controller
                     ],
                 ]);
             } catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $e) {
-                return json(['status' => 402,'msg' => $e->getResults()]);
+                Session::flash('error','位置错误请联系管理员');
+                return redirect('/index/login');
             }
         }
 
