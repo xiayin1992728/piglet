@@ -149,9 +149,98 @@
         $(this).addClass('filter-form-active');
     });
 
+    // 筛选
+    $(".filter-form-btn .yes").on('click',function(){
+        let money = $('.filter-form-money .filter-form-active').text();
+        let time = $('.filter-form-time .filter-form-active').text();
+        let card = $('.filter-form-card .filter-form-active').text();
+
+        $.ajax({
+            url:'/productsScreen',
+            type:'get',
+            data:{money:money,time:time,card:card},
+            dataType:'json',
+            success:function (res) {
+                if (res.status == 200) {
+                    $('.content').html(updates(res.data));
+                } else {
+                    $('.content').html('');
+                }
+            }
+        })
+    })
+
     // 切换分类
     $('.category div').on('click',function(){
-
+        let category = $(this).text();
+        $('.category div').removeClass('active');
+        $(this).addClass('active');
+        console.log(category);
+        $.ajax({
+            url:"/productsCategory/"+category,
+            type:'get',
+            dataType:'json',
+            success:function (res) {
+               if (res.status == 200) {
+                   $('.content').html(updates(res.data));
+               } else {
+                    $('.content').html('');
+               }
+            }
+        })
     })
+
+    // 更新数据
+    function updates($data) {
+        let str ='';
+        let host = location.protocol+'//'+location.host+'/';
+        $.each($data,function(i,c){
+            str += '<div class="product-container">\n' +
+                '                <div class="product-top">\n' +
+                '                    <div class="product-top-left">\n' +
+                '                        <div class="product-top-left-img">\n' +
+                '                            <img src="'+host+c.product_icon+'">\n' +
+                '                        </div>\n' +
+                '\n' +
+                '                        <div class="product-top-left-text">\n' +
+                '                            <h4>'+c.name+'</h4>\n' +
+                '                            <p>'+c.product_introduction+'</p>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '\n' +
+                '                    <div class="product-top-right">\n' +
+                '                        <span>'+c.loan_record+'</span>\n' +
+                '                        <p>人已下款</p>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '\n' +
+                '                <div class="product-middle"></div>\n' +
+                '\n' +
+                '                <div class="product-buttom">\n' +
+                '                    <div class="product-buttom-left">\n' +
+                '                        <p>可借额度：<span>'+c.money+'</span></p>\n' +
+                '                        <p>最快'+c.loan_time+'分钟下款</p>\n' +
+                '                    </div>\n' +
+                '\n' +
+                '                    <div class="product-buttom-right">\n' +
+                '                        <p>参考利率：'+c.interest_rate+'日利率</p>\n' +
+                '                        <p>贷款期限：'+c.loan_period+'天</p>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '\n' +
+                '                <div class="product-tag">\n' +
+                '                   \n';
+                    $.each(c.tag,function(x,v){
+                        str +='<div>' +
+                            v.name+
+                        '</div>'
+                    });
+                str +='                    \n' +
+                '                </div>\n' +
+                '                </div>'
+        })
+        //console.log(str);
+        return str;
+    }
 </script>
 {/block}

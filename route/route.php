@@ -12,6 +12,8 @@
 /*前台*/
 Route::get('/','index/index/index');
 Route::get('products/:id','index/product/product');
+Route::get('productsCategory/:category','index/category/category');
+Route::get('productsScreen','index/category/productScreen');
 
 Route::resource('person','index/user')->only(['index','edit','update','create','save']);
 Route::resource('index/login','index/sessions')->only(['index']);

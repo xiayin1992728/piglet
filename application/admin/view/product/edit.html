@@ -47,7 +47,7 @@
             </label>
             <div class="layui-input-inline">
                 <select name="money_section" lay-verify="required">
-                    {foreach $period_section as $v}
+                    {foreach $money_section as $v}
                     {if $product->money_section == $v}
                     <option value="{$v}" selected>{$v}</option>
                     {else /}
