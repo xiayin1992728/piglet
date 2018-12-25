@@ -15,7 +15,7 @@ class AuthRole extends Seeder
     public function run()
     {
         $data = [];
-        for ($i=1;$i<=10;$i++) {
+        for ($i=1;$i<=28;$i++) {
             $data[] = [
                 'role_id' => 1,
                 'auth_id' => $i

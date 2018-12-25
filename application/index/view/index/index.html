@@ -100,7 +100,7 @@
 
   	<!-- 产品列表 -->
 	<div class="product">
-		{if empty($card)}
+		{if !empty($card)}
   		<!-- 产品分类头 -->
   		<div class="product-header">
   			<div class="product-header-container">
@@ -185,6 +185,351 @@
 			{/foreach}
   		</div>
 		{/if}
+
+		{if !empty($explosive)}
+		<!-- 产品分类头 -->
+		<div class="product-header">
+			<div class="product-header-container">
+				<div>
+					<img src="__INDEX__/images/product/new.png">
+				</div>
+				<h6>爆款新产品</h6>
+			</div>
+		</div>
+		<!-- 产品列表 -->
+		<div class="product-list">
+			{foreach $explosive as $key => $vo }
+			{if $key == 0}
+			<div class="product-container">
+				<div class="product-top">
+					<div class="product-top-left">
+						<div class="product-top-left-img">
+							<img src="{:env('APP_URL').$vo->product_icon}">
+						</div>
+
+						<div class="product-top-left-text">
+							<h4>{$vo->name}</h4>
+							<p>{$vo->product_introduction}</p>
+						</div>
+					</div>
+
+					<div class="product-top-right">
+						<span>{$vo->loan_record}</span>
+						<p>人已下款</p>
+					</div>
+				</div>
+
+				<div class="product-middle"></div>
+
+				<div class="product-buttom">
+					<div class="product-buttom-left">
+						<p>可借额度：<span>{$vo->money}</span></p>
+						<p>最快{$vo->loan_time}分钟下款</p>
+					</div>
+
+					<div class="product-buttom-right">
+						<p>参考利率：日利率{$vo->interest_rate}%</p>
+						<p>贷款期限：{$vo->loan_period}天</p>
+					</div>
+				</div>
+			</div>
+			{else /}
+			<div class="product-container product-container-top">
+				<div class="product-top">
+					<div class="product-top-left">
+						<div class="product-top-left-img">
+							<img src="{:env('APP_URL').$vo->product_icon}">
+						</div>
+
+						<div class="product-top-left-text">
+							<h4>{$vo->name}</h4>
+							<p>{$vo->product_introduction}</p>
+						</div>
+					</div>
+
+					<div class="product-top-right">
+						<span>{$vo->loan_record}</span>
+						<p>人已下款</p>
+					</div>
+				</div>
+
+				<div class="product-middle"></div>
+
+				<div class="product-buttom">
+					<div class="product-buttom-left">
+						<p>可借额度：<span>{$vo->money}</span></p>
+						<p>最快{$vo->loan_time}分钟下款</p>
+					</div>
+
+					<div class="product-buttom-right">
+						<p>参考利率：日利率{$vo->interest_rate}%</p>
+						<p>贷款期限：{$vo->loan_period}天</p>
+					</div>
+				</div>
+			</div>
+			{/if}
+			{/foreach}
+		</div>
+		{/if}
+
+		{if !empty($credit)}
+		<!-- 产品分类头 -->
+		<div class="product-header">
+			<div class="product-header-container">
+				<div>
+					<img src="__INDEX__/images/product/new.png">
+				</div>
+				<h6>不上征信</h6>
+			</div>
+		</div>
+		<!-- 产品列表 -->
+		<div class="product-list">
+			{foreach $credit as $key => $vo }
+			{if $key == 0}
+			<div class="product-container">
+				<div class="product-top">
+					<div class="product-top-left">
+						<div class="product-top-left-img">
+							<img src="{:env('APP_URL').$vo->product_icon}">
+						</div>
+
+						<div class="product-top-left-text">
+							<h4>{$vo->name}</h4>
+							<p>{$vo->product_introduction}</p>
+						</div>
+					</div>
+
+					<div class="product-top-right">
+						<span>{$vo->loan_record}</span>
+						<p>人已下款</p>
+					</div>
+				</div>
+
+				<div class="product-middle"></div>
+
+				<div class="product-buttom">
+					<div class="product-buttom-left">
+						<p>可借额度：<span>{$vo->money}</span></p>
+						<p>最快{$vo->loan_time}分钟下款</p>
+					</div>
+
+					<div class="product-buttom-right">
+						<p>参考利率：日利率{$vo->interest_rate}%</p>
+						<p>贷款期限：{$vo->loan_period}天</p>
+					</div>
+				</div>
+			</div>
+			{else /}
+			<div class="product-container product-container-top">
+				<div class="product-top">
+					<div class="product-top-left">
+						<div class="product-top-left-img">
+							<img src="{:env('APP_URL').$vo->product_icon}">
+						</div>
+
+						<div class="product-top-left-text">
+							<h4>{$vo->name}</h4>
+							<p>{$vo->product_introduction}</p>
+						</div>
+					</div>
+
+					<div class="product-top-right">
+						<span>{$vo->loan_record}</span>
+						<p>人已下款</p>
+					</div>
+				</div>
+
+				<div class="product-middle"></div>
+
+				<div class="product-buttom">
+					<div class="product-buttom-left">
+						<p>可借额度：<span>{$vo->money}</span></p>
+						<p>最快{$vo->loan_time}分钟下款</p>
+					</div>
+
+					<div class="product-buttom-right">
+						<p>参考利率：日利率{$vo->interest_rate}%</p>
+						<p>贷款期限：{$vo->loan_period}天</p>
+					</div>
+				</div>
+			</div>
+			{/if}
+			{/foreach}
+		</div>
+		{/if}
+
+		{if !empty($black)}
+		<!-- 产品分类头 -->
+		<div class="product-header">
+			<div class="product-header-container">
+				<div>
+					<img src="__INDEX__/images/product/new.png">
+				</div>
+				<h6>黑户可下</h6>
+			</div>
+		</div>
+		<!-- 产品列表 -->
+		<div class="product-list">
+			{foreach $black as $key => $vo }
+			{if $key == 0}
+			<div class="product-container">
+				<div class="product-top">
+					<div class="product-top-left">
+						<div class="product-top-left-img">
+							<img src="{:env('APP_URL').$vo->product_icon}">
+						</div>
+
+						<div class="product-top-left-text">
+							<h4>{$vo->name}</h4>
+							<p>{$vo->product_introduction}</p>
+						</div>
+					</div>
+
+					<div class="product-top-right">
+						<span>{$vo->loan_record}</span>
+						<p>人已下款</p>
+					</div>
+				</div>
+
+				<div class="product-middle"></div>
+
+				<div class="product-buttom">
+					<div class="product-buttom-left">
+						<p>可借额度：<span>{$vo->money}</span></p>
+						<p>最快{$vo->loan_time}分钟下款</p>
+					</div>
+
+					<div class="product-buttom-right">
+						<p>参考利率：日利率{$vo->interest_rate}%</p>
+						<p>贷款期限：{$vo->loan_period}天</p>
+					</div>
+				</div>
+			</div>
+			{else /}
+			<div class="product-container product-container-top">
+				<div class="product-top">
+					<div class="product-top-left">
+						<div class="product-top-left-img">
+							<img src="{:env('APP_URL').$vo->product_icon}">
+						</div>
+
+						<div class="product-top-left-text">
+							<h4>{$vo->name}</h4>
+							<p>{$vo->product_introduction}</p>
+						</div>
+					</div>
+
+					<div class="product-top-right">
+						<span>{$vo->loan_record}</span>
+						<p>人已下款</p>
+					</div>
+				</div>
+
+				<div class="product-middle"></div>
+
+				<div class="product-buttom">
+					<div class="product-buttom-left">
+						<p>可借额度：<span>{$vo->money}</span></p>
+						<p>最快{$vo->loan_time}分钟下款</p>
+					</div>
+
+					<div class="product-buttom-right">
+						<p>参考利率：日利率{$vo->interest_rate}%</p>
+						<p>贷款期限：{$vo->loan_period}天</p>
+					</div>
+				</div>
+			</div>
+			{/if}
+			{/foreach}
+		</div>
+		{/if}
+
+		{if empty($large)}
+		<!-- 产品分类头 -->
+		<div class="product-header">
+			<div class="product-header-container">
+				<div>
+					<img src="__INDEX__/images/product/new.png">
+				</div>
+				<h6>大额分期贷款</h6>
+			</div>
+		</div>
+		<!-- 产品列表 -->
+		<div class="product-list">
+			{foreach $large as $key => $vo }
+			{if $key == 0}
+			<div class="product-container">
+				<div class="product-top">
+					<div class="product-top-left">
+						<div class="product-top-left-img">
+							<img src="{:env('APP_URL').$vo->product_icon}">
+						</div>
+
+						<div class="product-top-left-text">
+							<h4>{$vo->name}</h4>
+							<p>{$vo->product_introduction}</p>
+						</div>
+					</div>
+
+					<div class="product-top-right">
+						<span>{$vo->loan_record}</span>
+						<p>人已下款</p>
+					</div>
+				</div>
+
+				<div class="product-middle"></div>
+
+				<div class="product-buttom">
+					<div class="product-buttom-left">
+						<p>可借额度：<span>{$vo->money}</span></p>
+						<p>最快{$vo->loan_time}分钟下款</p>
+					</div>
+
+					<div class="product-buttom-right">
+						<p>参考利率：日利率{$vo->interest_rate}%</p>
+						<p>贷款期限：{$vo->loan_period}天</p>
+					</div>
+				</div>
+			</div>
+			{else /}
+			<div class="product-container product-container-top">
+				<div class="product-top">
+					<div class="product-top-left">
+						<div class="product-top-left-img">
+							<img src="{:env('APP_URL').$vo->product_icon}">
+						</div>
+
+						<div class="product-top-left-text">
+							<h4>{$vo->name}</h4>
+							<p>{$vo->product_introduction}</p>
+						</div>
+					</div>
+
+					<div class="product-top-right">
+						<span>{$vo->loan_record}</span>
+						<p>人已下款</p>
+					</div>
+				</div>
+
+				<div class="product-middle"></div>
+
+				<div class="product-buttom">
+					<div class="product-buttom-left">
+						<p>可借额度：<span>{$vo->money}</span></p>
+						<p>最快{$vo->loan_time}分钟下款</p>
+					</div>
+
+					<div class="product-buttom-right">
+						<p>参考利率：日利率{$vo->interest_rate}%</p>
+						<p>贷款期限：{$vo->loan_period}天</p>
+					</div>
+				</div>
+			</div>
+			{/if}
+			{/foreach}
+		</div>
+		{/if}
+
   	</div>
 
 	<!--活动的钱袋-->

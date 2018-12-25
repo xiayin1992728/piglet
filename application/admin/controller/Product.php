@@ -173,7 +173,6 @@ class Product extends Controller
         $file = request()->file('file');
         // 移动到框架应用根目录/uploads/ 目录下
         $dirs = '/uploads/products';
-        $this->getDir($dirs);
         $info = $file->move(Env::get('root_path').'public/'.$dirs);
         if($info){
             // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
@@ -182,20 +181,6 @@ class Product extends Controller
         }else{
             // 上传失败获取错误信息
             return ['status' => 402,'msg'=> $file->getError()];
-        }
-    }
-
-    protected function getDir($dirs,$level=0,$pre='')
-    {
-        $path = Env::get('root_path').'public/';
-        $dirs = trim($dirs,'/');
-        if (is_dir($path.$dirs)) {
-            return;
-        } else {
-            $dir = explode('/',$dirs)[$level];
-            mkdir($path.$pre.$dir);
-            $pre .= $dir.'/';
-            $this->getDir($dirs,$level+=1,$pre);
         }
     }
 }

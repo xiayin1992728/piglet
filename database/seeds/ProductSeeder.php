@@ -1,4 +1,4 @@
-<?php
+static/index/images<?php
 
 use think\migration\Seeder;
 
@@ -16,13 +16,13 @@ class ProductSeeder extends Seeder
     {
         $time = date('Y-m-d H:i:s',time());
         $product = [
-            '/uploads/products/1.jpg',
-            '/uploads/products/2.jpg',
-            '/uploads/products/3.jpg',
-            '/uploads/products/4.jpg',
-            '/uploads/products/5.jpg',
-            '/uploads/products/6.jpg',
-            '/uploads/products/7.jpg',
+            '/static/index/images/1.jpg',
+            '/static/index/images/2.jpg',
+            '/static/index/images/3.jpg',
+            '/static/index/images/4.jpg',
+            '/static/index/images/5.jpg',
+            '/static/index/images/6.jpg',
+            '/static/index/images/7.jpg',
         ];
 
         $money_section = [
@@ -61,10 +61,12 @@ class ProductSeeder extends Seeder
           '有信用，最高20万'
         ];
 
-        $data = [
-            [
-                'name' => '小猪来帮忙',
-                'category_id' => '1',
+        $data = [];
+
+        for ($i=0;$i<50;$i++) {
+            $data[] = [
+                'name' => '小猪来帮忙'.$i,
+                'category_id' => random_int(1,13),
                 'money' => '20000',
                 'loan_time' => '7',
                 'interest_rate' => '0.05%',
@@ -81,50 +83,8 @@ class ProductSeeder extends Seeder
                 'require_age' => random_int(19,100),
                 'sesame' => random_int(500,999),
                 'create_time' => $time
-            ],
-
-            [
-            'name' => '有钱花',
-            'category_id' => '1',
-            'money' => '20000',
-            'loan_time' => '7',
-            'interest_rate' => '0.05%',
-            'loan_period' => '7-14',
-            'product_icon' => $product[random_int(0,6)],
-            'loan_record' => random_int(1000,9999),
-            'product_introduction' => $introduction[random_int(0,4)],
-            'product_url' => 'http://www.vipxia.cn',
-            'identity' => '身份证',
-            'auxiliary' => '芝麻分、手机号',
-            'money_section' => $money_section[random_int(0,6)],
-            'period_section' => $period_section[random_int(0,6)],
-            'card' => $card[random_int(0,4)],
-            'require_age' => random_int(19,100),
-            'sesame' => random_int(500,999),
-            'create_time' => $time
-        ],
-
-            [
-                'name' => '小红鱼',
-                'category_id' => '1',
-                'money' => '20000',
-                'loan_time' => '7',
-                'interest_rate' => '0.05%',
-                'loan_period' => '7-14',
-                'product_icon' => $product[random_int(0,6)],
-                'loan_record' => random_int(1000,9999),
-                'product_introduction' => $introduction[random_int(0,4)],
-                'product_url' => 'http://www.vipxia.cn',
-                'identity' => '身份证',
-                'auxiliary' => '芝麻分、手机号',
-                'require_age' => random_int(19,100),
-                'sesame' => random_int(500,999),
-                'money_section' => $money_section[random_int(0,6)],
-                'period_section' => $period_section[random_int(0,6)],
-                'card' => $card[random_int(0,4)],
-                'create_time' => $time
-            ]
-        ];
+            ];
+        }
 
         $this->table('products')->insert($data)->save();
     }

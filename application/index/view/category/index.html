@@ -73,7 +73,7 @@
             <!--产品列表开始-->
             {if !empty($products) }
                 {foreach $products as $product}
-                <div class="product-container">
+                  <a href="/products/{$product->id}"><div class="product-container">
                 <div class="product-top">
                     <div class="product-top-left">
                         <div class="product-top-left-img">
@@ -113,7 +113,7 @@
                     </div>
                     {/foreach}
                 </div>
-                </div>
+                </div></a>
                 {/foreach}
             {/if}
             <!--产品列表结束-->
@@ -195,7 +195,7 @@
         let str ='';
         let host = location.protocol+'//'+location.host+'/';
         $.each($data,function(i,c){
-            str += '<div class="product-container">\n' +
+            str += '<a href="/products/"'+c.id+'><div class="product-container">\n' +
                 '                <div class="product-top">\n' +
                 '                    <div class="product-top-left">\n' +
                 '                        <div class="product-top-left-img">\n' +
@@ -237,7 +237,7 @@
                     });
                 str +='                    \n' +
                 '                </div>\n' +
-                '                </div>'
+                '                </div></a>'
         })
         //console.log(str);
         return str;
