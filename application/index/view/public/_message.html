@@ -1,5 +1,5 @@
 {foreach ['error','success'] as $msg}
-    {if Session::has($msg,'user') }
+    {if Session::has($msg) }
         <div class="{$msg}">
             <span></span>
             <h6>{:Session::get($msg)}</h6>

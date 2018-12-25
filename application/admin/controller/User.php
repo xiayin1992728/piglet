@@ -1,20 +1,14 @@
 <?php
 
-namespace app\index\controller;
+namespace app\admin\controller;
 
 use think\Controller;
 use think\Request;
-use think\facade\Session;
 use app\common\model\User as UserModel;
 use app\common\validate\User as UserValidate;
 
 class User extends Controller
 {
-
-    protected $middleware = [
-        'user' => ['only' => ['index','delete']]
-    ];
-
     /**
      * 显示资源列表
      *
@@ -22,7 +16,7 @@ class User extends Controller
      */
     public function index()
     {
-        $user = Session::get('user','user');
+        $user = UserModel::paginate(10);
         $this->assign('user',$user);
         return $this->fetch();
     }
@@ -34,7 +28,7 @@ class User extends Controller
      */
     public function create()
     {
-        //
+        return $this->fetch();
     }
 
     /**
@@ -43,9 +37,19 @@ class User extends Controller
      * @param  \think\Request  $request
      * @return \think\Response
      */
-    public function save(Request $request)
+    public function save(Request $request,UserModel $user,UserValidate $validate)
     {
-        //
+        $data = $request->post();
+        $data['create_time'] = date('Y-m-d H:i:s',time());
+        if (!$validate->sceneSave()->check($data)) {
+            return ['status' => 402,'msg' => $validate->getError()];
+        }
+
+        if ($user->allowField(true)->save($data)) {
+            return ['status' => 200,'msg' => '添加成功'];
+        } else {
+            return ['status' => 402,'msg' => '添加失败'];
+        }
     }
 
     /**
@@ -79,22 +83,19 @@ class User extends Controller
      * @param  int  $id
      * @return \think\Response
      */
-    public function update(Request $request,UserValidate $validate,UserModel $user,$id)
+    public function update(Request $request, UserModel $user,UserValidate $validate,$id)
     {
         $data = $request->put();
-        $user = $user->get($id);
-        if (!$validate->sceneUpdate($id)->check($data)) {
-            Session::flash('error',$validate->getError());
-            return redirect('/person/'.$user->id.'/edit');
+        if (!$validate->sceneUpdates($id)->check($data)) {
+            return ['status' => 402,'msg' => $validate->getError()];
         }
 
-        if ($user->allowField(true)->save($data)) {
-            Session::flash('success','修改成功');
-            return redirect('/person/'.$user->id.'/edit');
+        if ($user->allowField(true)->save($data,['id' => $id])) {
+            return ['status' => 200,'msg' => '修改成功'];
         } else {
-            Session::flash('error','修改失败');
-            return redirect('/person/'.$user->id.'/edit');
+            return ['status' => 402,'msg' =>'修改失败'];
         }
+
     }
 
     /**
@@ -103,23 +104,27 @@ class User extends Controller
      * @param  int  $id
      * @return \think\Response
      */
-    public function delete($id)
+    public function delete(UserModel $user,$id)
     {
-        //
+        $user = $user->get($id);
+        if ($user->delete()) {
+            return ['status'=> 200,'msg' =>'删除成功'];
+        } else {
+            return ['status' => 402,'msg' => '删除失败'];
+        }
     }
 
-    public function upload(Request $request)
+    public function upload()
     {
         // 获取表单上传文件 例如上传了001.jpg
-        $file = request()->file('uploads');
+        $file = request()->file('file');
         // 移动到框架应用根目录/uploads/ 目录下
-        $info = $file->move(env('root_path').'public/'.'uploads/user');
+        $info = $file->move( env('root_path').'public/uploads/user');
         if($info){
-            // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
-            echo json_encode(['status' => 200,'data' =>'/uploads/user/'.$info->getSaveName()]) ;
+            return ['status' => 200,'data' => 'uploads/user/'.$info->getSaveName()];
         }else{
             // 上传失败获取错误信息
-            echo ['status' => 402,'msg' => $file->getError()];
+            return ['status' => 402,'msg' => $file->getError()];
         }
     }
 }

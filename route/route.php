@@ -16,6 +16,7 @@ Route::get('productsCategory/:category','index/category/category');
 Route::get('productsScreen','index/category/productScreen');
 
 Route::resource('person','index/user')->only(['index','edit','update','create','save']);
+Route::post('user/upload','index/user/upload');
 Route::resource('index/login','index/sessions')->only(['index']);
 Route::post('index/message','index/sessions/message');
 Route::delete('index/logout','index/sessions/delete');
@@ -50,6 +51,8 @@ Route::get('admin/:id/edit','admin/admin/edit')->middleware(['auth']);
 Route::put('admin/:id','admin/admin/update')->middleware(['auth']);
 Route::delete('admin/:id','admin/admin/delete')->middleware(['auth']);
 Route::delete('admins','admin/admin/deletes')->middleware(['auth']);
+Route::resource('users','admin/user')->middleware(['auth']);
+Route::post('users/upload','admin/user/upload')->middleware(['auth']);
 
 // 角色
 Route::get('role','admin/role/index')->middleware(['auth']);

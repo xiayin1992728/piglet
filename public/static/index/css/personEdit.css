@@ -1,0 +1,88 @@
+body,p,img,ul,li,input {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 7vw;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content ul {
+    list-style-type: none;
+}
+
+.content ul li img {
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw;
+}
+
+.content ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5vw;
+    align-items: center;
+    font-size: 5vw;
+}
+
+.content ul li input{
+    border: 0;
+    outline: none;
+    height: 5.6vw;
+    text-indent: 20vw;
+}
+
+.btn {
+    margin: 5vw;
+    height: 8vw;
+    border: 1px solid gray;
+    text-align: center;
+    border-radius: 4vw;
+    font-size: 5vw;
+}
+
+.btn button {
+    background: white;
+    border: none;
+    height: 100%;
+    letter-spacing: 1vw;
+    font-size: 5vw;
+    outline: none;
+    width: 92%;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
+    color: white;
+}
+.error h6 {
+    width: 68vw;
+    background: #ef9595;
+    text-align: center;
+    border-radius: 3vw;
+}
+
+.success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
+    color: white;
+}
+
+.success h6 {
+    width: 68vw;
+    background: green;
+    text-align: center;
+    border-radius: 3vw;
+}
+

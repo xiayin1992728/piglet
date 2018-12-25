@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             [
                 'name' => '夏银',
                 'phone' => '15108479103',
-                'avatar' => env('APP_URL').'/static/images/avatar/default.png',
+                'avatar' => '/static/index/images/person/default.png',
                 'password' => md5(md5('password')),
                 'create_time' => $time,
             ]

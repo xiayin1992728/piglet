@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人设置</title>
+    <link rel="stylesheet" href="/static/index/css/personEdit.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            {include file="public/_message" /}
+            <form action="/person/{$user->id}" method="POST">
+                {:token()}
+                <input type="hidden" name="_method" value="PUT">
+                <ul>
+                <li>
+                    <span>头像</span>
+                    <img id="upload" src="{:env('APP_URL').$user['avatar']}" alt="" />
+                    <input type="file" hidden id="uploads" name="uploads">
+                    <input type="hidden" name="avatar" id="avatar" value="">
+                </li>
+                <li>
+                    <span>昵称</span>
+                    <input type="text" name="alias" value="{$user->alias}" />
+                </li>
+                <li>
+                    <span>手机</span>
+                    <span>{$user->phone}</span>
+                </li>
+                <li>
+                    <span>真实姓名</span>
+                    <input type="text" name="name" placeholder="请输入真实姓名" value="{$user->name}">
+                </li>
+                <li>
+                    <span>身份证号</span>
+                    <input type="text" name="card" placeholder="请输入身份证号" value="{$user->card}">
+                </li>
+                <li>
+                    <span>银行卡号</span>
+                    <input type="text" name="blank_card" placeholder="请输入银行卡号" value="{$user->blank_card}">
+                </li>
+            </ul>
+
+            <div class="btn">
+                <button type="submit">保存</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="/static/index/js/jquery.js"></script>
+<script src="/static/index/js/upload.js"></script>
+<script>
+    $('#upload').on('click',function(){
+        $('#uploads').click();
+    });
+
+    $('input[type="file"]').ajaxfileupload({
+        action: '/user/upload',
+        valid_extensions : ['jpg','png'],
+        onComplete: function(res) {
+            console.log(res.data);
+            if (res.status == 200) {
+                $('#upload').attr('src',"{:env('APP_URL')}"+res.data);
+                $('#avatar').attr('value',res.data);
+            } else {
+
+            }
+        },
+        onStart: function() {
+
+        },
+        onCancel: function() {
+            console.log('no file selected');
+        }
+    });
+
+</script>
+</html>

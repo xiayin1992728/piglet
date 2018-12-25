@@ -3,569 +3,589 @@
 {block name='title'}<title>首页</title>{/block}
 
 {block name="css"}
-	<link rel="stylesheet" type="text/css" href="__INDEX__/css/index.css">
-	<link rel="stylesheet" type="text/css" href="__INDEX__/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="__INDEX__/css/index.css">
+<link rel="stylesheet" type="text/css" href="__INDEX__/css/swiper.min.css">
 {/block}
 
 {block name='content'}
-	<!-- 顶部轮播 -->
-  <div class="swiper-container">
+<!-- 顶部轮播 -->
+<div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="__INDEX__/images/swiper/1.jpg" width="100%"></div>
-      <div class="swiper-slide"><img src="__INDEX__/images/swiper/2.jpg" width="100%"></div>
-      <div class="swiper-slide"><img src="__INDEX__/images/swiper/3.jpg" width="100%"></div>
+        <div class="swiper-slide"><img src="__INDEX__/images/swiper/1.jpg" width="100%"></div>
+        <div class="swiper-slide"><img src="__INDEX__/images/swiper/2.jpg" width="100%"></div>
+        <div class="swiper-slide"><img src="__INDEX__/images/swiper/3.jpg" width="100%"></div>
     </div>
-  </div>
+</div>
 
-  	<!-- 广告 -->
-  <div class="advert">
+<!-- 广告 -->
+<div class="advert">
 
-  	<!-- 标签广告 -->
-  	<div class="advert-tags">
-  		<div class="advert-tags-container">
-  			<div class="advert-tags-container-left">
-  				<div class="advert-icon"></div>
-  				<p>一定贷到钱</p>
-  			</div>
-  			<div class="advert-tags-container-middle">
-  				
-  			</div>
-  			<div class="advert-tags-container-right">
-  				<div class="advert-icon"></div>
-  				<p>暂未开通</p>
-  			</div>
-  		</div>
-  	</div>
+    <!-- 标签广告 -->
+    <div class="advert-tags">
+        <div class="advert-tags-container">
+            <div class="advert-tags-container-left">
+                <div class="advert-icon"></div>
+                <p>一定贷到钱</p>
+            </div>
+            <div class="advert-tags-container-middle">
 
-  	<!-- 滚动播报 -->
-  	<div class="advert-carousel">
-  		<div class="advert-carousel-container">
-	  		<div class="advert-carousel-img"></div>
-	  		<div class="advert-carousel-text">
-	  			<h5>有钱花</h5>
-	  			<p>189****6307下款 50000 元成功</p>
-	  		</div>
-  		</div>
-  	</div>
-  </div>
+            </div>
+            <div class="advert-tags-container-right">
+                <div class="advert-icon"></div>
+                <p>暂未开通</p>
+            </div>
+        </div>
+    </div>
 
-  <!-- 推荐栏 -->
-  <div class="recommend">
-		<div>
-			<h4>通过率98%</h4>
-			<p>不查征信，低门槛</p>
-		</div>
-		<div>
-			<h4>新口子秒过</h4>
-			<p>超高通过率，秒下款</p>
-		</div>  	
-  </div>
+    <!-- 滚动播报 -->
+    <div class="advert-carousel">
+        <div class="advert-carousel-container">
+            <div class="advert-carousel-img"></div>
+            <div class="advert-carousel-text">
+                <h5>有钱花</h5>
+                <p>189****6307下款 50000 元成功</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <!-- 秒下款产品 -->
-  <div class="second-product-header">
-  		<div class="second-product-header-container">
-  			<div>
-				<img src="__INDEX__/images/product/fire.png">
-			</div>
-  			<h6>秒下款产品</h6>
-  			<p>(全部申请100%下款)</p>
-  		</div>
-  </div>
-  <div class="second-product">
-  	<!-- 产品容器 -->
-  	<div class="second-product-list">
-		{foreach $second as $key=>$vo }
-			{if $key == 0 }
-				<div class="second-product-container">
-					<div>
-						<a href="{:url('/products/'.$vo->id)}">
-						<img src="{:env('APP_URL').$vo->product_icon}">
-						</a>
-					</div>
-					<a href="{:url('/products/'.$vo->id)}"><p>{$vo->name}</p></a>
-				</div>
-			{else /}
-				<!-- 分割线 -->
-				<div class="line"></div>
-				<div class="second-product-container">
-					<div>
-						<a href="{:url('/products/'.$vo->id)}"><img src="{:env('APP_URL').$vo->product_icon}"></a>
-					</div>
-					<a href="{:url('/products/'.$vo->id)}"><p>{$vo->name}</p></a>
-				</div>
-			{/if}
-		{/foreach}
-  	</div>
-  </div>
+<!-- 推荐栏 -->
+<div class="recommend">
+    <div>
+        <h4>通过率98%</h4>
+        <p>不查征信，低门槛</p>
+    </div>
+    <div>
+        <h4>新口子秒过</h4>
+        <p>超高通过率，秒下款</p>
+    </div>
+</div>
 
-  	<!-- 产品列表 -->
-	<div class="product">
-		{if !empty($card)}
-  		<!-- 产品分类头 -->
-  		<div class="product-header">
-  			<div class="product-header-container">
-  				<div>
-  					<img src="__INDEX__/images/product/new.png">
-  				</div>
-  			<h6>凭身份证下款</h6>
-  			</div>
-  		</div>
-		<!-- 产品列表 -->
-  		<div class="product-list">
-			{foreach $card as $key => $vo }
-				{if $key == 0}
-					<div class="product-container" onclick="location.href='{$vo->product_url}'">
-					<div class="product-top">
-						<div class="product-top-left">
-							<div class="product-top-left-img">
-								<img src="{:env('APP_URL').$vo->product_icon}">
-							</div>
+<!-- 秒下款产品 -->
+<div class="second-product-header">
+    <div class="second-product-header-container">
+        <div>
+            <img src="__INDEX__/images/product/fire.png">
+        </div>
+        <h6>秒下款产品</h6>
+        <p>(全部申请100%下款)</p>
+    </div>
+</div>
+<div class="second-product">
+    <!-- 产品容器 -->
+    <div class="second-product-list">
+        {foreach $second as $key=>$vo }
+        {if $key == 0 }
+        <div class="second-product-container">
+            <div>
+                <a href="{:url('/products/'.$vo->id)}">
+                    <img src="{:env('APP_URL').$vo->product_icon}">
+                </a>
+            </div>
+            <a href="{:url('/products/'.$vo->id)}"><p>{$vo->name}</p></a>
+        </div>
+        {else /}
+        <!-- 分割线 -->
+        <div class="line"></div>
+        <div class="second-product-container">
+            <div>
+                <a href="{:url('/products/'.$vo->id)}"><img src="{:env('APP_URL').$vo->product_icon}"></a>
+            </div>
+            <a href="{:url('/products/'.$vo->id)}"><p>{$vo->name}</p></a>
+        </div>
+        {/if}
+        {/foreach}
+    </div>
+</div>
 
-							<div class="product-top-left-text">
-								<h4>{$vo->name}</h4>
-								<p>{$vo->product_introduction}</p>
-							</div>
-						</div>
+<!-- 产品列表 -->
+<div class="product">
+    {if !empty($card)}
+    <!-- 产品分类头 -->
+    <div class="product-header">
+        <div class="product-header-container">
+            <div>
+                <img src="__INDEX__/images/product/new.png">
+            </div>
+            <h6>凭身份证下款</h6>
+        </div>
+    </div>
+    <!-- 产品列表 -->
+    <div class="product-list">
+        {foreach $card as $key => $vo }
+        {if $key == 0}
+        <a href="{:url('/products/'.$vo->id)}">
+            <div class="product-container">
+                <div class="product-top">
+                    <div class="product-top-left">
+                        <div class="product-top-left-img">
+                            <img src="{:env('APP_URL').$vo->product_icon}">
+                        </div>
 
-						<div class="product-top-right">
-							<span>{$vo->loan_record}</span>
-							<p>人已下款</p>
-						</div>
-					</div>
+                        <div class="product-top-left-text">
+                            <h4>{$vo->name}</h4>
+                            <p>{$vo->product_introduction}</p>
+                        </div>
+                    </div>
 
-					<div class="product-middle"></div>
+                    <div class="product-top-right">
+                        <span>{$vo->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
+                </div>
 
-					<div class="product-buttom">
-						<div class="product-buttom-left">
-							<p>可借额度：<span>{$vo->money}</span></p>
-							<p>最快{$vo->loan_time}分钟下款</p>
-						</div>
+                <div class="product-middle"></div>
 
-						<div class="product-buttom-right">
-							<p>参考利率：日利率{$vo->interest_rate}%</p>
-							<p>贷款期限：{$vo->loan_period}天</p>
-						</div>
-					</div>
-				</div>
-				{else /}
-					<div class="product-container product-container-top" onclick="location.href='{$vo->product_url}'">
-					<div class="product-top">
-						<div class="product-top-left">
-							<div class="product-top-left-img">
-								<img src="{:env('APP_URL').$vo->product_icon}">
-							</div>
+                <div class="product-buttom">
+                    <div class="product-buttom-left">
+                        <p>可借额度：<span>{$vo->money}</span></p>
+                        <p>最快{$vo->loan_time}分钟下款</p>
+                    </div>
 
-							<div class="product-top-left-text">
-								<h4>{$vo->name}</h4>
-								<p>{$vo->product_introduction}</p>
-							</div>
-						</div>
+                    <div class="product-buttom-right">
+                        <p>参考利率：日利率{$vo->interest_rate}%</p>
+                        <p>贷款期限：{$vo->loan_period}天</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {else /}
+        <a href="{:url('/products/'.$vo->id)}">
+            <div class="product-container product-container-top">
+                <div class="product-top">
+                    <div class="product-top-left">
+                        <div class="product-top-left-img">
+                            <img src="{:env('APP_URL').$vo->product_icon}">
+                        </div>
 
-						<div class="product-top-right">
-							<span>{$vo->loan_record}</span>
-							<p>人已下款</p>
-						</div>
-					</div>
+                        <div class="product-top-left-text">
+                            <h4>{$vo->name}</h4>
+                            <p>{$vo->product_introduction}</p>
+                        </div>
+                    </div>
 
-					<div class="product-middle"></div>
+                    <div class="product-top-right">
+                        <span>{$vo->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
+                </div>
 
-					<div class="product-buttom">
-						<div class="product-buttom-left">
-							<p>可借额度：<span>{$vo->money}</span></p>
-							<p>最快{$vo->loan_time}分钟下款</p>
-						</div>
+                <div class="product-middle"></div>
 
-						<div class="product-buttom-right">
-							<p>参考利率：日利率{$vo->interest_rate}%</p>
-							<p>贷款期限：{$vo->loan_period}天</p>
-						</div>
-					</div>
-				</div>
-				{/if}
-			{/foreach}
-  		</div>
-		{/if}
+                <div class="product-buttom">
+                    <div class="product-buttom-left">
+                        <p>可借额度：<span>{$vo->money}</span></p>
+                        <p>最快{$vo->loan_time}分钟下款</p>
+                    </div>
 
-		{if !empty($explosive)}
-		<!-- 产品分类头 -->
-		<div class="product-header">
-			<div class="product-header-container">
-				<div>
-					<img src="__INDEX__/images/product/new.png">
-				</div>
-				<h6>爆款新产品</h6>
-			</div>
-		</div>
-		<!-- 产品列表 -->
-		<div class="product-list">
-			{foreach $explosive as $key => $vo }
-			{if $key == 0}
-			<div class="product-container" onclick="location.href='{$vo->product_url}'">
-				<div class="product-top">
-					<div class="product-top-left">
-						<div class="product-top-left-img">
-							<img src="{:env('APP_URL').$vo->product_icon}">
-						</div>
+                    <div class="product-buttom-right">
+                        <p>参考利率：日利率{$vo->interest_rate}%</p>
+                        <p>贷款期限：{$vo->loan_period}天</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {/if}
+        {/foreach}
+    </div>
+    {/if}
 
-						<div class="product-top-left-text">
-							<h4>{$vo->name}</h4>
-							<p>{$vo->product_introduction}</p>
-						</div>
-					</div>
+    {if !empty($explosive)}
+    <!-- 产品分类头 -->
+    <div class="product-header">
+        <div class="product-header-container">
+            <div>
+                <img src="__INDEX__/images/product/new.png">
+            </div>
+            <h6>爆款新产品</h6>
+        </div>
+    </div>
+    <!-- 产品列表 -->
+    <div class="product-list">
+        {foreach $explosive as $key => $vo }
+        {if $key == 0}
+        <a href="{:url('/products/'.$vo->id)}">
+            <div class="product-container">
+                <div class="product-top">
+                    <div class="product-top-left">
+                        <div class="product-top-left-img">
+                            <img src="{:env('APP_URL').$vo->product_icon}">
+                        </div>
 
-					<div class="product-top-right">
-						<span>{$vo->loan_record}</span>
-						<p>人已下款</p>
-					</div>
-				</div>
+                        <div class="product-top-left-text">
+                            <h4>{$vo->name}</h4>
+                            <p>{$vo->product_introduction}</p>
+                        </div>
+                    </div>
 
-				<div class="product-middle"></div>
+                    <div class="product-top-right">
+                        <span>{$vo->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
+                </div>
 
-				<div class="product-buttom">
-					<div class="product-buttom-left">
-						<p>可借额度：<span>{$vo->money}</span></p>
-						<p>最快{$vo->loan_time}分钟下款</p>
-					</div>
+                <div class="product-middle"></div>
 
-					<div class="product-buttom-right">
-						<p>参考利率：日利率{$vo->interest_rate}%</p>
-						<p>贷款期限：{$vo->loan_period}天</p>
-					</div>
-				</div>
-			</div>
-			{else /}
-			<div class="product-container product-container-top" onclick="location.href='{$vo->product_url}'">
-				<div class="product-top">
-					<div class="product-top-left">
-						<div class="product-top-left-img">
-							<img src="{:env('APP_URL').$vo->product_icon}">
-						</div>
+                <div class="product-buttom">
+                    <div class="product-buttom-left">
+                        <p>可借额度：<span>{$vo->money}</span></p>
+                        <p>最快{$vo->loan_time}分钟下款</p>
+                    </div>
 
-						<div class="product-top-left-text">
-							<h4>{$vo->name}</h4>
-							<p>{$vo->product_introduction}</p>
-						</div>
-					</div>
+                    <div class="product-buttom-right">
+                        <p>参考利率：日利率{$vo->interest_rate}%</p>
+                        <p>贷款期限：{$vo->loan_period}天</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {else /}
+        <a href="{:url('/products/'.$vo->id)}">
+            <div class="product-container product-container-top">
+                <div class="product-top">
+                    <div class="product-top-left">
+                        <div class="product-top-left-img">
+                            <img src="{:env('APP_URL').$vo->product_icon}">
+                        </div>
 
-					<div class="product-top-right">
-						<span>{$vo->loan_record}</span>
-						<p>人已下款</p>
-					</div>
-				</div>
+                        <div class="product-top-left-text">
+                            <h4>{$vo->name}</h4>
+                            <p>{$vo->product_introduction}</p>
+                        </div>
+                    </div>
 
-				<div class="product-middle"></div>
+                    <div class="product-top-right">
+                        <span>{$vo->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
+                </div>
 
-				<div class="product-buttom">
-					<div class="product-buttom-left">
-						<p>可借额度：<span>{$vo->money}</span></p>
-						<p>最快{$vo->loan_time}分钟下款</p>
-					</div>
+                <div class="product-middle"></div>
 
-					<div class="product-buttom-right">
-						<p>参考利率：日利率{$vo->interest_rate}%</p>
-						<p>贷款期限：{$vo->loan_period}天</p>
-					</div>
-				</div>
-			</div>
-			{/if}
-			{/foreach}
-		</div>
-		{/if}
+                <div class="product-buttom">
+                    <div class="product-buttom-left">
+                        <p>可借额度：<span>{$vo->money}</span></p>
+                        <p>最快{$vo->loan_time}分钟下款</p>
+                    </div>
 
-		{if !empty($credit)}
-		<!-- 产品分类头 -->
-		<div class="product-header">
-			<div class="product-header-container">
-				<div>
-					<img src="__INDEX__/images/product/new.png">
-				</div>
-				<h6>不上征信</h6>
-			</div>
-		</div>
-		<!-- 产品列表 -->
-		<div class="product-list">
-			{foreach $credit as $key => $vo }
-			{if $key == 0}
-			<div class="product-container" onclick="location.href='{$vo->product_url}'">
-				<div class="product-top">
-					<div class="product-top-left">
-						<div class="product-top-left-img">
-							<img src="{:env('APP_URL').$vo->product_icon}">
-						</div>
+                    <div class="product-buttom-right">
+                        <p>参考利率：日利率{$vo->interest_rate}%</p>
+                        <p>贷款期限：{$vo->loan_period}天</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {/if}
+        {/foreach}
+    </div>
+    {/if}
 
-						<div class="product-top-left-text">
-							<h4>{$vo->name}</h4>
-							<p>{$vo->product_introduction}</p>
-						</div>
-					</div>
+    {if !empty($credit)}
+    <!-- 产品分类头 -->
+    <div class="product-header">
+        <div class="product-header-container">
+            <div>
+                <img src="__INDEX__/images/product/new.png">
+            </div>
+            <h6>不上征信</h6>
+        </div>
+    </div>
+    <!-- 产品列表 -->
+    <div class="product-list">
+        {foreach $credit as $key => $vo }
+        {if $key == 0}
+        <a href="{:url('/products/'.$vo->id)}">
+            <div class="product-container">
+                <div class="product-top">
+                    <div class="product-top-left">
+                        <div class="product-top-left-img">
+                            <img src="{:env('APP_URL').$vo->product_icon}">
+                        </div>
 
-					<div class="product-top-right">
-						<span>{$vo->loan_record}</span>
-						<p>人已下款</p>
-					</div>
-				</div>
+                        <div class="product-top-left-text">
+                            <h4>{$vo->name}</h4>
+                            <p>{$vo->product_introduction}</p>
+                        </div>
+                    </div>
 
-				<div class="product-middle"></div>
+                    <div class="product-top-right">
+                        <span>{$vo->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
+                </div>
 
-				<div class="product-buttom">
-					<div class="product-buttom-left">
-						<p>可借额度：<span>{$vo->money}</span></p>
-						<p>最快{$vo->loan_time}分钟下款</p>
-					</div>
+                <div class="product-middle"></div>
 
-					<div class="product-buttom-right">
-						<p>参考利率：日利率{$vo->interest_rate}%</p>
-						<p>贷款期限：{$vo->loan_period}天</p>
-					</div>
-				</div>
-			</div>
-			{else /}
-			<div class="product-container product-container-top" onclick="location.href='{$vo->product_url}'">
-				<div class="product-top">
-					<div class="product-top-left">
-						<div class="product-top-left-img">
-							<img src="{:env('APP_URL').$vo->product_icon}">
-						</div>
+                <div class="product-buttom">
+                    <div class="product-buttom-left">
+                        <p>可借额度：<span>{$vo->money}</span></p>
+                        <p>最快{$vo->loan_time}分钟下款</p>
+                    </div>
 
-						<div class="product-top-left-text">
-							<h4>{$vo->name}</h4>
-							<p>{$vo->product_introduction}</p>
-						</div>
-					</div>
+                    <div class="product-buttom-right">
+                        <p>参考利率：日利率{$vo->interest_rate}%</p>
+                        <p>贷款期限：{$vo->loan_period}天</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {else /}
+        <a href="{:url('/products/'.$vo->id)}">
+            <div class="product-container product-container-top">
+                <div class="product-top">
+                    <div class="product-top-left">
+                        <div class="product-top-left-img">
+                            <img src="{:env('APP_URL').$vo->product_icon}">
+                        </div>
 
-					<div class="product-top-right">
-						<span>{$vo->loan_record}</span>
-						<p>人已下款</p>
-					</div>
-				</div>
+                        <div class="product-top-left-text">
+                            <h4>{$vo->name}</h4>
+                            <p>{$vo->product_introduction}</p>
+                        </div>
+                    </div>
 
-				<div class="product-middle"></div>
+                    <div class="product-top-right">
+                        <span>{$vo->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
+                </div>
 
-				<div class="product-buttom">
-					<div class="product-buttom-left">
-						<p>可借额度：<span>{$vo->money}</span></p>
-						<p>最快{$vo->loan_time}分钟下款</p>
-					</div>
+                <div class="product-middle"></div>
 
-					<div class="product-buttom-right">
-						<p>参考利率：日利率{$vo->interest_rate}%</p>
-						<p>贷款期限：{$vo->loan_period}天</p>
-					</div>
-				</div>
-			</div>
-			{/if}
-			{/foreach}
-		</div>
-		{/if}
+                <div class="product-buttom">
+                    <div class="product-buttom-left">
+                        <p>可借额度：<span>{$vo->money}</span></p>
+                        <p>最快{$vo->loan_time}分钟下款</p>
+                    </div>
 
-		{if !empty($black)}
-		<!-- 产品分类头 -->
-		<div class="product-header">
-			<div class="product-header-container">
-				<div>
-					<img src="__INDEX__/images/product/new.png">
-				</div>
-				<h6>黑户可下</h6>
-			</div>
-		</div>
-		<!-- 产品列表 -->
-		<div class="product-list">
-			{foreach $black as $key => $vo }
-			{if $key == 0}
-			<div class="product-container" onclick="location.href='{$vo->product_url}'">
-				<div class="product-top">
-					<div class="product-top-left">
-						<div class="product-top-left-img">
-							<img src="{:env('APP_URL').$vo->product_icon}">
-						</div>
+                    <div class="product-buttom-right">
+                        <p>参考利率：日利率{$vo->interest_rate}%</p>
+                        <p>贷款期限：{$vo->loan_period}天</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {/if}
+        {/foreach}
+    </div>
+    {/if}
 
-						<div class="product-top-left-text">
-							<h4>{$vo->name}</h4>
-							<p>{$vo->product_introduction}</p>
-						</div>
-					</div>
+    {if !empty($black)}
+    <!-- 产品分类头 -->
+    <div class="product-header">
+        <div class="product-header-container">
+            <div>
+                <img src="__INDEX__/images/product/new.png">
+            </div>
+            <h6>黑户可下</h6>
+        </div>
+    </div>
+    <!-- 产品列表 -->
+    <div class="product-list">
+        {foreach $black as $key => $vo }
+        {if $key == 0}
+        <a href="{:url('/products/'.$vo->id)}">
+            <div class="product-container">
+                <div class="product-top">
+                    <div class="product-top-left">
+                        <div class="product-top-left-img">
+                            <img src="{:env('APP_URL').$vo->product_icon}">
+                        </div>
 
-					<div class="product-top-right">
-						<span>{$vo->loan_record}</span>
-						<p>人已下款</p>
-					</div>
-				</div>
+                        <div class="product-top-left-text">
+                            <h4>{$vo->name}</h4>
+                            <p>{$vo->product_introduction}</p>
+                        </div>
+                    </div>
 
-				<div class="product-middle"></div>
+                    <div class="product-top-right">
+                        <span>{$vo->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
+                </div>
 
-				<div class="product-buttom">
-					<div class="product-buttom-left">
-						<p>可借额度：<span>{$vo->money}</span></p>
-						<p>最快{$vo->loan_time}分钟下款</p>
-					</div>
+                <div class="product-middle"></div>
 
-					<div class="product-buttom-right">
-						<p>参考利率：日利率{$vo->interest_rate}%</p>
-						<p>贷款期限：{$vo->loan_period}天</p>
-					</div>
-				</div>
-			</div>
-			{else /}
-			<div class="product-container product-container-top" onclick="location.href='{$vo->product_url}'">
-				<div class="product-top">
-					<div class="product-top-left">
-						<div class="product-top-left-img">
-							<img src="{:env('APP_URL').$vo->product_icon}">
-						</div>
+                <div class="product-buttom">
+                    <div class="product-buttom-left">
+                        <p>可借额度：<span>{$vo->money}</span></p>
+                        <p>最快{$vo->loan_time}分钟下款</p>
+                    </div>
 
-						<div class="product-top-left-text">
-							<h4>{$vo->name}</h4>
-							<p>{$vo->product_introduction}</p>
-						</div>
-					</div>
+                    <div class="product-buttom-right">
+                        <p>参考利率：日利率{$vo->interest_rate}%</p>
+                        <p>贷款期限：{$vo->loan_period}天</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {else /}
+        <a href="{:url('/products/'.$vo->id)}">
+            <div class="product-container product-container-top">
+                <div class="product-top">
+                    <div class="product-top-left">
+                        <div class="product-top-left-img">
+                            <img src="{:env('APP_URL').$vo->product_icon}">
+                        </div>
 
-					<div class="product-top-right">
-						<span>{$vo->loan_record}</span>
-						<p>人已下款</p>
-					</div>
-				</div>
+                        <div class="product-top-left-text">
+                            <h4>{$vo->name}</h4>
+                            <p>{$vo->product_introduction}</p>
+                        </div>
+                    </div>
 
-				<div class="product-middle"></div>
+                    <div class="product-top-right">
+                        <span>{$vo->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
+                </div>
 
-				<div class="product-buttom">
-					<div class="product-buttom-left">
-						<p>可借额度：<span>{$vo->money}</span></p>
-						<p>最快{$vo->loan_time}分钟下款</p>
-					</div>
+                <div class="product-middle"></div>
 
-					<div class="product-buttom-right">
-						<p>参考利率：日利率{$vo->interest_rate}%</p>
-						<p>贷款期限：{$vo->loan_period}天</p>
-					</div>
-				</div>
-			</div>
-			{/if}
-			{/foreach}
-		</div>
-		{/if}
+                <div class="product-buttom">
+                    <div class="product-buttom-left">
+                        <p>可借额度：<span>{$vo->money}</span></p>
+                        <p>最快{$vo->loan_time}分钟下款</p>
+                    </div>
 
-		{if empty($large)}
-		<!-- 产品分类头 -->
-		<div class="product-header">
-			<div class="product-header-container">
-				<div>
-					<img src="__INDEX__/images/product/new.png">
-				</div>
-				<h6>大额分期贷款</h6>
-			</div>
-		</div>
-		<!-- 产品列表 -->
-		<div class="product-list">
-			{foreach $large as $key => $vo }
-			{if $key == 0}
-			<div class="product-container" onclick="location.href='{$vo->product_url}'">
-				<div class="product-top">
-					<div class="product-top-left">
-						<div class="product-top-left-img">
-							<img src="{:env('APP_URL').$vo->product_icon}">
-						</div>
+                    <div class="product-buttom-right">
+                        <p>参考利率：日利率{$vo->interest_rate}%</p>
+                        <p>贷款期限：{$vo->loan_period}天</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {/if}
+        {/foreach}
+    </div>
+    {/if}
 
-						<div class="product-top-left-text">
-							<h4>{$vo->name}</h4>
-							<p>{$vo->product_introduction}</p>
-						</div>
-					</div>
+    {if empty($large)}
+    <!-- 产品分类头 -->
+    <div class="product-header">
+        <div class="product-header-container">
+            <div>
+                <img src="__INDEX__/images/product/new.png">
+            </div>
+            <h6>大额分期贷款</h6>
+        </div>
+    </div>
+    <!-- 产品列表 -->
+    <div class="product-list">
+        {foreach $large as $key => $vo }
+        {if $key == 0}
+        <a href="{:url('/products/'.$vo->id)}">
+            <div class="product-container">
+                <div class="product-top">
+                    <div class="product-top-left">
+                        <div class="product-top-left-img">
+                            <img src="{:env('APP_URL').$vo->product_icon}">
+                        </div>
 
-					<div class="product-top-right">
-						<span>{$vo->loan_record}</span>
-						<p>人已下款</p>
-					</div>
-				</div>
+                        <div class="product-top-left-text">
+                            <h4>{$vo->name}</h4>
+                            <p>{$vo->product_introduction}</p>
+                        </div>
+                    </div>
 
-				<div class="product-middle"></div>
+                    <div class="product-top-right">
+                        <span>{$vo->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
+                </div>
 
-				<div class="product-buttom">
-					<div class="product-buttom-left">
-						<p>可借额度：<span>{$vo->money}</span></p>
-						<p>最快{$vo->loan_time}分钟下款</p>
-					</div>
+                <div class="product-middle"></div>
 
-					<div class="product-buttom-right">
-						<p>参考利率：日利率{$vo->interest_rate}%</p>
-						<p>贷款期限：{$vo->loan_period}天</p>
-					</div>
-				</div>
-			</div>
-			{else /}
-			<div class="product-container product-container-top" onclick="location.href='{$vo->product_url}'">
-				<div class="product-top">
-					<div class="product-top-left">
-						<div class="product-top-left-img">
-							<img src="{:env('APP_URL').$vo->product_icon}">
-						</div>
+                <div class="product-buttom">
+                    <div class="product-buttom-left">
+                        <p>可借额度：<span>{$vo->money}</span></p>
+                        <p>最快{$vo->loan_time}分钟下款</p>
+                    </div>
 
-						<div class="product-top-left-text">
-							<h4>{$vo->name}</h4>
-							<p>{$vo->product_introduction}</p>
-						</div>
-					</div>
+                    <div class="product-buttom-right">
+                        <p>参考利率：日利率{$vo->interest_rate}%</p>
+                        <p>贷款期限：{$vo->loan_period}天</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {else /}
+        <a href="{:url('/products/'.$vo->id)}">
+            <div class="product-container product-container-top">
+                <div class="product-top">
+                    <div class="product-top-left">
+                        <div class="product-top-left-img">
+                            <img src="{:env('APP_URL').$vo->product_icon}">
+                        </div>
 
-					<div class="product-top-right">
-						<span>{$vo->loan_record}</span>
-						<p>人已下款</p>
-					</div>
-				</div>
+                        <div class="product-top-left-text">
+                            <h4>{$vo->name}</h4>
+                            <p>{$vo->product_introduction}</p>
+                        </div>
+                    </div>
 
-				<div class="product-middle"></div>
+                    <div class="product-top-right">
+                        <span>{$vo->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
+                </div>
 
-				<div class="product-buttom">
-					<div class="product-buttom-left">
-						<p>可借额度：<span>{$vo->money}</span></p>
-						<p>最快{$vo->loan_time}分钟下款</p>
-					</div>
+                <div class="product-middle"></div>
 
-					<div class="product-buttom-right">
-						<p>参考利率：日利率{$vo->interest_rate}%</p>
-						<p>贷款期限：{$vo->loan_period}天</p>
-					</div>
-				</div>
-			</div>
-			{/if}
-			{/foreach}
-		</div>
-		{/if}
+                <div class="product-buttom">
+                    <div class="product-buttom-left">
+                        <p>可借额度：<span>{$vo->money}</span></p>
+                        <p>最快{$vo->loan_time}分钟下款</p>
+                    </div>
 
-  	</div>
+                    <div class="product-buttom-right">
+                        <p>参考利率：日利率{$vo->interest_rate}%</p>
+                        <p>贷款期限：{$vo->loan_period}天</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {/if}
+        {/foreach}
+    </div>
+    {/if}
 
-	<!--活动的钱袋-->
-	<div class="money" onclick="location.href='{$bill->product_url ?? '#'}'">
-		<div>
-			<img src="__INDEX__/images/money.png" alt="">
-		</div>
-		<h5>3分钟下款</h5>
-	</div>
+</div>
+
+<!--活动的钱袋-->
+<div class="money" onclick="location.href='{$bill->product_url ?? '#'}'">
+    <div>
+        <img src="__INDEX__/images/money.png" alt="">
+    </div>
+    <h5>3分钟下款</h5>
+</div>
 {include file="public/_menu" /}
 {/block}
 
 {block name="js"}
 <script src="__INDEX__/js/swiper.min.js"></script>
 <script type="text/javascript">
-	let n = 0;
-	let timer = 0;
-	// 顶部轮播
-	var swiper = new Swiper('.swiper-container',{
-		spaceBetween: 30,
-      	centeredSlides: true,
-      	autoplay: {
-        	delay: 2500,
-        	disableOnInteraction: false,
-      	},
-	});
+    let n = 0;
+    let timer = 0;
+    // 顶部轮播
+    var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    });
 
-	// 滚动字幕
-	setInterval(function () {
-	    // 动画淡出元素
+    // 滚动字幕
+    setInterval(function () {
+        // 动画淡出元素
         $(".advert-carousel-container").animate({
-			top:'-1.2rem',
-		}, 2000 );
+            top: '-1.2rem',
+        }, 2000);
 
 
-		let html = '<div class="advert-carousel-container" style="top:1.5rem">\n' +
+        let html = '<div class="advert-carousel-container" style="top:1.5rem">\n' +
             '<div class="advert-carousel-img"></div>\n' +
             '<div class="advert-carousel-text">\n' +
             '<h5>有钱花</h5>\n' +
@@ -573,35 +593,38 @@
             '</div>\n' +
             '</div>';
 
-		// 追加一个元素
+        // 追加一个元素
         $('.advert-carousel').append(html);
 
         // 动画拉出第二个元素
         $('.advert-carousel-container').eq(1).animate({
-            top:'0.2rem',
-        },2000);
+            top: '0.2rem',
+        }, 2000);
 
         // 删除第一个元素
-		setTimeout(function() {
+        setTimeout(function () {
             $('.advert-carousel-container').eq(0).remove();
-		},2000);
-	},4000);
+        }, 2000);
+    }, 4000);
 
-	// 钱袋旋转
-	setInterval(function() {
-		n = timer ? n+2 : n-2;
-		if (n == 20) {
-		    timer = 0;
-		}
-		if (n == -20) {
-		    timer = 1;
-		}
-	    $('.money').css('transform','rotate('+n+'deg)');
-	},100);
+    // 钱袋旋转
+    setInterval(function () {
+        n = timer ? n + 2 : n - 2;
+        if (n == 20) {
+            timer = 0;
+        }
+        if (n == -20) {
+            timer = 1;
+        }
+        $('.money').css('transform', 'rotate(' + n + 'deg)');
+    }, 100);
 
-	// 跳转一定贷到钱
-	$('.advert-tags-container-left').on('click',function(){
-	    location.href = '/pro'
-	})
+    // 跳转一定贷到钱
+    $('.advert-tags-container-left').on('click', function () {
+        location.href = '/pro'
+    })
+
+    // 刷新数据
+    
 </script>
 {/block}

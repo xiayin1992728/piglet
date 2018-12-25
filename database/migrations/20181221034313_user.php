@@ -36,7 +36,7 @@ class User extends Migrator
             ->addColumn('blank_card','string',['limit' => 40,'null' => true,'comment' => '银行卡号'])
             ->addColumn('avatar','string',array('limit' => 255,'null' => true,'comment' => '用户头像'))
             ->addColumn('phone','string',array('limit' => 25,'comment' => '手机号'))
-            ->addColumn('password','string',array('limit' => 80,'comment' => '用户密码'))
+            ->addColumn('password','string',array('limit' => 80, 'null' => true,'comment' => '用户密码'))
             ->addColumn('create_time','datetime',array('comment' => '创建时间'))
             ->addColumn('update_time','timestamp',array('comment' => '修改时间'))
             ->addColumn('delete_time','integer',array('limit' => 10,'null' => true,'comment' => '软删除'))
