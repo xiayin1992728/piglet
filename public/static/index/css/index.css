@@ -242,7 +242,7 @@
     }
 
     .second-product-container p {
-        font-size: 0.4rem;
+        font-size: 0.36rem;
         color: #585050;
         margin-top: 0.2rem;
     }
@@ -343,12 +343,12 @@
     }
 
     .product-top-left-text p {
-      font-size: 0.4rem;
+      font-size: 0.3rem;
       color: #5a5454;
     }
 
     .product-top-right {
-        font-size: 0.4rem;
+        font-size: 0.3rem;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -372,7 +372,7 @@
     .product-buttom {
       display: flex;
       flex-direction: row;
-      font-size: 0.4rem;
+      font-size: 0.3rem;
       justify-content: space-between;
       color: #5a5454;
     }

@@ -18,25 +18,14 @@ class ProductTagSeeder extends Seeder
     {
         $product = Product::column('id');
         $tag = Tag::column('id');
+        $data = [];
 
-        $data = [
-            [
-                'product_id' => $product[random_int(0,count($product)-1)],
-                'tag_id' => $tag[random_int(0,count($tag)-1)],
-            ],
-            [
-                'product_id' => $product[random_int(0,count($product)-1)],
-                'tag_id' => $tag[random_int(0,count($tag)-1)],
-            ],
-            [
-                'product_id' => $product[random_int(0,count($product)-1)],
-                'tag_id' => $tag[random_int(0,count($tag)-1)],
-            ],
-            [
-                'product_id' => $product[random_int(0,count($product)-1)],
-                'tag_id' => $tag[random_int(0,count($tag)-1)],
-            ]
-        ];
+        foreach ($product as $key => $vo) {
+           $data[] = [
+               'product_id' => $vo,
+               'tag_id' => $tag[random_int(0,count($tag)-1)],
+           ];
+        }
 
         $this->table('product_tags')->insert($data)->save();
     }
