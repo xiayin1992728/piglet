@@ -8,14 +8,14 @@
             <button type="button" class="layui-btn" id="one">
                 <i class="layui-icon">&#xe67c;</i>上传图片
             </button>
-            <img src="{$carousel.one}" style="position: absolute;top:-10px;left:500px;" alt="" width="100" height="100" id="img1">
-            <input type="hidden" class="one" name="one" value="{$carousel.one}">
+            <img src="{$carousel.one.img}" style="position: absolute;top:-10px;left:500px;" alt="" width="100" height="100" id="img1">
+            <input type="hidden" class="one" name="one[img]" value="{$carousel.one.img}">
         </div>
     </div>
         <div class="layui-form-item">
             <label class="layui-form-label">链接</label>
             <div class="layui-input-inline">
-                <input type="text" name="oneLink" value="{$carousel.oneLink}" class="layui-input">
+                <input type="text" name="one[link]" value="{$carousel.one.link}" class="layui-input">
             </div>
         </div>
 
@@ -25,14 +25,14 @@
                 <button type="button" class="layui-btn" id="two">
                     <i class="layui-icon">&#xe67c;</i>上传图片
                 </button>
-                <img src="{$carousel.two}" style="position: absolute;top:-10px;left:500px;" alt="" width="100" height="100" id="img2">
-                <input type="hidden" class="two" value="{$carousel.two}" name="two">
+                <img src="{$carousel.two.img}" style="position: absolute;top:-10px;left:500px;" alt="" width="100" height="100" id="img2">
+                <input type="hidden" class="two" value="{$carousel.two.img}" name="two[img]">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">链接</label>
             <div class="layui-input-inline">
-                <input type="text" name="twoLink" value="{$carousel.twoLink}" class="layui-input">
+                <input type="text" name="two[link]" value="{$carousel.two.link}" class="layui-input">
             </div>
         </div>
 
@@ -42,14 +42,14 @@
                 <button type="button" class="layui-btn" id="three">
                     <i class="layui-icon">&#xe67c;</i>上传图片
                 </button>
-                <img src="{$carousel.three}" style="position: absolute;top:-10px;left:500px;" alt="" width="100" height="100" id="img3">
-                <input type="hidden" value="{$carousel.three}" class="three" name="three">
+                <img src="{$carousel.three.img}" style="position: absolute;top:-10px;left:500px;" alt="" width="100" height="100" id="img3">
+                <input type="hidden" value="{$carousel.three.img}" class="three" name="three[img]">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">链接</label>
             <div class="layui-input-inline">
-                <input type="text" name="threeLink" value="{$carousel.threeLink}" class="layui-input">
+                <input type="text" name="three[link]" value="{$carousel.three.link}" class="layui-input">
             </div>
         </div>
 

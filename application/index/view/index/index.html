@@ -11,9 +11,13 @@
 <!-- 顶部轮播 -->
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="__INDEX__/images/swiper/1.jpg" width="100%"></div>
-        <div class="swiper-slide"><img src="__INDEX__/images/swiper/2.jpg" width="100%"></div>
-        <div class="swiper-slide"><img src="__INDEX__/images/swiper/3.jpg" width="100%"></div>
+    {if !empty($carousel) }
+        {foreach $carousel as $vo }
+            <div class="swiper-slide" onclick="location.href='{$vo.link}'">
+                <img src="{$vo.img}" width="100%">
+            </div>
+        {/foreach}
+    {/if}
     </div>
 </div>
 

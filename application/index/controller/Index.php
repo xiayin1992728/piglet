@@ -9,6 +9,14 @@ class Index extends Controller
 {
     public function index()
     {
+        $file = env('root_path').'public/setting/carousel.json';
+        $carousel = [];
+        if (file_exists($file)) {
+            $handle = fopen($file,'r');
+            $carousel = json_decode(stream_get_contents($handle),true);
+            fclose($handle);
+        }
+        //halt($carousel);
         $advert = ($category = Category::where('name','一定贷到钱')->find()) ? $category->product()->order('update_time desc')->limit(0,6)->select() : [] ;
 
         $second = ($second = Category::where('name','秒下款产品')->find()) ? $second->product()->order('update_time desc')->limit(0,4)->select() : [];
@@ -35,7 +43,8 @@ class Index extends Controller
             'explosive' => $explosive,
             'credit' => $credit,
             'black' => $black,
-            'large' => $large
+            'large' => $large,
+            'carousel' => $carousel
         ]);
     }
 }
