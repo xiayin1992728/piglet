@@ -17,4 +17,6 @@ return [
     'default_namespace' => 'app\\http\\middleware\\',
     'auth' => 'app\http\middleware\Auth::class',
     'user' => 'app\http\middleware\User::class',
+    'indexGuest' => 'app\http\middleware\IndexGuest::class',
+    'adminGuest' => 'app\http\middleware\AdminGuest::class',
 ];

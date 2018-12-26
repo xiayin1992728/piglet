@@ -21,7 +21,6 @@ class Sessions extends Controller
         Session::init([
             'prefix'         => 'user',
             'type'           => '',
-            'expire'         => '3600',
             'auto_start'     => true,
         ]);
     }
@@ -189,7 +188,7 @@ class Sessions extends Controller
      */
     public function delete()
     {
-        Session::delete('user','user');
+        Session::clear('user');
         return redirect('/');
     }
 }

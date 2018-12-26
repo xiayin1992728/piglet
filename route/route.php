@@ -19,10 +19,10 @@ Route::get('certain/:id','index/certain/index');
 
 Route::resource('person','index/user')->only(['index','edit','update','create','save']);
 Route::post('user/upload','index/user/upload');
-Route::resource('index/login','index/sessions')->only(['index']);
-Route::post('index/message','index/sessions/message');
+Route::resource('index/login','index/sessions')->only(['index'])->middleware(['indexGuest']);
+Route::post('index/message','index/sessions/message')->middleware(['indexGuest']);
 Route::delete('index/logout','index/sessions/delete');
-Route::post('index/messagevalidate','index/sessions/messagevalidate');
+Route::post('index/messagevalidate','index/sessions/messagevalidate')->middleware(['indexGuest']);
 
 /*后台*/
 // 产品
@@ -36,8 +36,8 @@ Route::delete('product/:id','admin/product/delete')->middleware(['auth']);
 Route::post('product/upload','admin/product/upload')->middleware(['auth']);
 
 // 登录
-Route::get('login','admin/login/login');
-Route::post('login','admin/login/loginCheck');
+Route::get('login','admin/login/login')->middleware(['adminGuest']);
+Route::post('login','admin/login/loginCheck')->middleware(['adminGuest']);
 Route::post('logout','admin/admin/logout')->middleware(['auth']);
 
 // 欢迎页面
