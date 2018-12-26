@@ -1,0 +1,87 @@
+{extend name="public/app" /}
+
+{block name='title'}<title>一定贷到钱</title>{/block}
+
+{block name="css"}
+<link rel="stylesheet" href="__INDEX__/css/certain.css">
+{/block}
+
+{block name='content'}
+<div class="container">
+    <div class="back">
+
+    </div>
+    <!--内容主体开始-->
+    <div class="content">
+        <!--产品列表开始-->
+        {if !empty($products) }
+        {foreach $products as $product}
+        <a href="/products/{$product->id}">
+            <div class="product-container">
+                <div class="product-top">
+                    <div class="product-top-left">
+                        <div class="product-top-left-img">
+                            <img src="{:env('APP_URL').$product->product_icon}">
+                        </div>
+
+                        <div class="product-top-left-text">
+                            <h4>{$product->name}</h4>
+                            <p>{$product->product_introduction}</p>
+                        </div>
+                    </div>
+
+                    <div class="product-top-right">
+                        <span>{$product->loan_record}</span>
+                        <p>人已下款</p>
+                    </div>
+                </div>
+
+                <div class="product-middle"></div>
+
+                <div class="product-buttom">
+                    <div class="product-buttom-left">
+                        <p>可借额度：<span>{$product->money}</span></p>
+                        <p>最快{$product->loan_time}分钟下款</p>
+                    </div>
+
+                    <div class="product-buttom-right">
+                        <p>参考利率：日利率{$product->interest_rate}</p>
+                        <p>贷款期限：{$product->loan_period}天</p>
+                    </div>
+                </div>
+
+                <div class="product-tag">
+                    {foreach $product->tag as $v}
+                    <div>
+                        {$v->name}
+                    </div>
+                    {/foreach}
+                </div>
+            </div>
+        </a>
+        {/foreach}
+        {/if}
+        <!--产品列表结束-->
+
+        <div class="recommend">
+            <h5>推荐专题</h5>
+            <div class="recommend-container">
+                <div class="yes">
+                    <p>一定贷到钱</p>
+                </div>
+                <div class="new">
+                    <div class="new-content">
+                        <p>新口子秒过</p>
+                        <span>超高通过率，秒下款</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--内容主体结束-->
+</div>
+{/block}
+
+{block name="js"}
+
+{/block}

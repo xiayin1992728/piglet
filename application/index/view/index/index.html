@@ -27,18 +27,20 @@
     <!-- 标签广告 -->
     <div class="advert-tags">
         <div class="advert-tags-container">
-            <div class="advert-tags-container-left">
-                <div class="advert-icon">
-                    <img src="/static/index/images/advert/money.png" alt="">
+            <a href="/certain/{$ido->id}">
+                <div class="advert-tags-container-left">
+                    <div class="advert-icon">
+                        <img src="{:env('APP_URL')}/static/index/images/advert/money.png" alt=""/>
+                    </div>
+                    <p>一定贷到钱</p>
                 </div>
-                <p>一定贷到钱</p>
-            </div>
+            </a>
             <div class="advert-tags-container-middle">
 
             </div>
             <div class="advert-tags-container-right">
                 <div class="advert-icon">
-                    <img src="/static/index/images/advert/blacklist.png" alt="">
+                    <img src="{:env('APP_URL')}/static/index/images/advert/blacklist.png" alt=""/>
                 </div>
                 <p>暂未开通</p>
             </div>
@@ -59,14 +61,18 @@
 
 <!-- 推荐栏 -->
 <div class="recommend">
-    <div>
-        <h4>通过率98%</h4>
-        <p>不查征信，低门槛</p>
-    </div>
-    <div>
-        <h4>新口子秒过</h4>
-        <p>超高通过率，秒下款</p>
-    </div>
+    <a href="/certain/{$idt->id}">
+        <div>
+            <h4>通过率98%</h4>
+            <p>不查征信，低门槛</p>
+        </div>
+    </a>
+    <a href="/certain/{$ids->id}">
+        <div>
+            <h4>新口子秒过</h4>
+            <p>超高通过率，秒下款</p>
+        </div>
+    </a>
 </div>
 
 <!-- 秒下款产品 -->
@@ -609,18 +615,18 @@
         }, 2000);
 
         let length = datas.length - 1;
-        let index = GetRandomNum(0,length);
-        let section = ['3','5','7','8'];
-        let phone = '1'+section[GetRandomNum(0,3)]+GetRandomNum(0,9)+'****'+GetRandomNum(0,9)+GetRandomNum(0,9)+GetRandomNum(0,9)+GetRandomNum(0,9);
-        let moneySection = getRange(1000,50000,1000);
-        let money = moneySection[GetRandomNum(0,moneySection.length-1)];
+        let index = GetRandomNum(0, length);
+        let section = ['3', '5', '7', '8'];
+        let phone = '1' + section[GetRandomNum(0, 3)] + GetRandomNum(0, 9) + '****' + GetRandomNum(0, 9) + GetRandomNum(0, 9) + GetRandomNum(0, 9) + GetRandomNum(0, 9);
+        let moneySection = getRange(1000, 50000, 1000);
+        let money = moneySection[GetRandomNum(0, moneySection.length - 1)];
         let html = '<div class="advert-carousel-container" style="top:1.5rem">\n' +
             '<div class="advert-carousel-img">' +
-            '<img src="{:env("APP_URL")}'+datas[index].product_icon+'" />' +
+            '<img src="{:env("APP_URL")}' + datas[index].product_icon + '" />' +
             '</div>\n' +
             '<div class="advert-carousel-text">\n' +
-            '<h5>'+datas[index].name+'</h5>\n' +
-            '<p>'+phone+'下款 '+money+' 元成功</p>\n' +
+            '<h5>' + datas[index].name + '</h5>\n' +
+            '<p>' + phone + '下款 ' + money + ' 元成功</p>\n' +
             '</div>\n' +
             '</div>';
 
@@ -658,10 +664,9 @@
     }
 
     // 生成数组
-    function getRange(start,end,step)
-    {
+    function getRange(start, end, step) {
         let arr = [];
-        for (let i=start;i<=end;i+=step) {
+        for (let i = start; i <= end; i += step) {
             arr.push(i);
         }
         return arr;

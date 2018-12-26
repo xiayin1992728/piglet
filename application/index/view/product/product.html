@@ -66,47 +66,47 @@
 <div class="easy-product">
     <strong>为你推荐易下款产品</strong>
     {foreach $easy as $key => $vo}
-        <!--容器-->
-        <div class="easy-product-container" onclick="location.href='{$product->product_url}'">
-            <!--上-->
-            <div class="easy-product-top">
-                <!--左边-->
-                <div class="easy-product-top-left">
-                    <div class="easy-product-top-left-img">
-                        <img src="{:env('APP_URL').$vo->product_icon}">
-                    </div>
-                    <div class="easy-product-top-left-text">
-                        <h6>{$vo->name}</h6>
-                        <p>{$vo->product_introduction}</p>
-                    </div>
+    <!--容器-->
+    <div class="easy-product-container" onclick="location.href='{$product->product_url}'">
+        <!--上-->
+        <div class="easy-product-top">
+            <!--左边-->
+            <div class="easy-product-top-left">
+                <div class="easy-product-top-left-img">
+                    <img src="{:env('APP_URL').$vo->product_icon}">
                 </div>
-
-                <!--右边-->
-                <div class="easy-product-top-right">
-                    <div>
-                        <span>{$vo->loan_record}</span>
-                        <p>人已下款</p>
-                    </div>
+                <div class="easy-product-top-left-text">
+                    <h6>{$vo->name}</h6>
+                    <p>{$vo->product_introduction}</p>
                 </div>
             </div>
 
-            <!--中-->
-            <div class="easy-product-middle"></div>
-
-            <!--下-->
-            <div class="easy-product-buttom">
-                <div class="detail">
-                    <span>{$vo->money}</span>
-                    <p>{$vo->interest_rate}</p>
-                    <p>{$vo->loan_period}天</p>
-                </div>
-                <div class="tag">
-                    <span>可借额度（元）</span>
-                    <p>日利率（%）</p>
-                    <p>最长可借时间</p>
+            <!--右边-->
+            <div class="easy-product-top-right">
+                <div>
+                    <span>{$vo->loan_record}</span>
+                    <p>人已下款</p>
                 </div>
             </div>
         </div>
+
+        <!--中-->
+        <div class="easy-product-middle"></div>
+
+        <!--下-->
+        <div class="easy-product-buttom">
+            <div class="detail">
+                <span>{$vo->money}</span>
+                <p>{$vo->interest_rate}</p>
+                <p>{$vo->loan_period}天</p>
+            </div>
+            <div class="tag">
+                <span>可借额度（元）</span>
+                <p>日利率（%）</p>
+                <p>最长可借时间</p>
+            </div>
+        </div>
+    </div>
     {/foreach}
 </div>
 

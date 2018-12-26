@@ -1,0 +1,198 @@
+body,p,div,input {
+    margin: 0;
+    padding: 0;
+}
+.back {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: -99;
+    top: 0;
+    background: url('/static/index/images/back.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.content {
+    position: relative;
+    top:30vw;
+    padding: 0 3vw;
+}
+
+/*产品样式开始*/
+.product-container {
+    display: flex;
+    flex-direction: column;
+    height: 3.2rem;
+    justify-content: center;
+    background: white;
+    padding: 5px 0.5rem;
+    margin-top:2vw;
+    border-radius: 3vw;
+}
+
+.product-container-top {
+    margin-top:5px;
+}
+
+.product-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.product-top-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.product-top-left-img {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    margin-right: 10px;
+}
+
+.product-top-left-img img {
+    width: 100%;
+}
+
+.product-top-left-text {
+
+}
+
+.product-top-left-text h4 {
+    font-size: 0.4rem;
+    color:grey;
+}
+
+.product-top-left-text p {
+    font-size: 0.3rem;
+    color: #5a5454;
+}
+
+.product-top-right {
+    font-size: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: #5a5454;
+}
+
+.product-top-right span {
+    color:orange;
+    display: flex;
+    align-items: center;
+}
+
+.product-middle {
+    height: 1px;
+    width: 100%;
+    background: #d2c6c6;
+    margin: 5px 0;
+}
+
+.product-buttom {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.3rem;
+    justify-content: space-between;
+    color: #5a5454;
+}
+
+.product-buttom-left p span{
+    color: orange;
+}
+
+.product-buttom-right {
+
+}
+
+.product-tag {
+    height: 0.5rem;
+    font-size: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    color: #1E9FFF;
+    margin-top: 0.2rem;
+}
+
+.product-tag div {
+    border:1px solid #1E9FFF;
+    margin-right: 0.2rem;
+    border-radius: 0.1rem;
+    height: 0.5rem;
+    padding: 0 5px;
+    line-height: 0.5rem;
+}
+
+/*产品样式结束*/
+
+/* 推荐专题 */
+.recommend {
+    background: white;
+    margin-top: 6vw;
+    border-radius: 3vw;
+    padding: 2vw 2vw 3vw 2vw;
+}
+
+.recommend h5 {
+    border-left: 1vw solid #007DDB;
+    text-indent: 3vw;
+    font-size: 4vw;
+}
+
+.recommend-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2vw;
+    justify-content: space-between;
+    color: white;
+}
+
+.recommend .yes {
+    width: 45%;
+    font-size: 3vw;
+    border-radius: 2vw;
+    height: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #007DDB;
+}
+
+.yes p {
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.recommend .new {
+    width: 45%;
+    display: flex;
+    height: 15vw;
+    justify-content: center;
+    border-radius: 2vw;
+    flex-direction: column;
+    align-items: center;
+    background: #007DDB;
+}
+
+.new-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommend .new .new-content p {
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.recommend .new .new-content span {
+    font-size: 3vw;
+}
+

@@ -15,6 +15,7 @@ Route::get('products/:id','index/product/product');
 Route::get('productsCategory/:category','index/category/category');
 Route::get('productsScreen','index/category/productScreen');
 Route::get('products','index/product/products');
+Route::get('certain/:id','index/certain/index');
 
 Route::resource('person','index/user')->only(['index','edit','update','create','save']);
 Route::post('user/upload','index/user/upload');
