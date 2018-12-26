@@ -27,7 +27,7 @@
     <!-- 标签广告 -->
     <div class="advert-tags">
         <div class="advert-tags-container">
-            <a href="{$bill ? '/products'.$bill->id : '#'}">
+            <a href="/certain/{$ido->id}">
                 <div class="advert-tags-container-left">
                     <div class="advert-icon">
                         <img src="{:env('APP_URL')}/static/index/images/advert/money.png" alt=""/>
@@ -574,7 +574,7 @@
 </div>
 
 <!--活动的钱袋-->
-<a href="/products/{$bill->id}">
+<a href="{$bill ? '/products/'.$bill->id : '#'}">
 <div class="money">
     <div>
         <img src="__INDEX__/images/money.png" alt="">
