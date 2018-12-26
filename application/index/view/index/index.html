@@ -28,14 +28,18 @@
     <div class="advert-tags">
         <div class="advert-tags-container">
             <div class="advert-tags-container-left">
-                <div class="advert-icon"></div>
+                <div class="advert-icon">
+                    <img src="/static/index/images/advert/money.png" alt="">
+                </div>
                 <p>一定贷到钱</p>
             </div>
             <div class="advert-tags-container-middle">
 
             </div>
             <div class="advert-tags-container-right">
-                <div class="advert-icon"></div>
+                <div class="advert-icon">
+                    <img src="/static/index/images/advert/blacklist.png" alt="">
+                </div>
                 <p>暂未开通</p>
             </div>
         </div>
@@ -607,9 +611,9 @@
         let length = datas.length - 1;
         let index = GetRandomNum(0,length);
         let section = ['3','5','7','8'];
-        let phone = '1'+section[GetRandomNum(0,5)]+GetRandomNum(0,9)+'****'+GetRandomNum(0,9)+GetRandomNum(0,9)+GetRandomNum(0,9)+GetRandomNum(0,9);
+        let phone = '1'+section[GetRandomNum(0,3)]+GetRandomNum(0,9)+'****'+GetRandomNum(0,9)+GetRandomNum(0,9)+GetRandomNum(0,9)+GetRandomNum(0,9);
         let moneySection = getRange(1000,50000,1000);
-        let money = GetRandomNum(0,moneySection.length-1);
+        let money = moneySection[GetRandomNum(0,moneySection.length-1)];
         let html = '<div class="advert-carousel-container" style="top:1.5rem">\n' +
             '<div class="advert-carousel-img">' +
             '<img src="{:env("APP_URL")}'+datas[index].product_icon+'" />' +

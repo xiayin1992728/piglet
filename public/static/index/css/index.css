@@ -78,9 +78,7 @@
     }
 
     .advert-tags-container-left div {
-       background-image: url('/static/index/images/advert/money.png');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+
     }
 
     .advert-tags-container-middle {
@@ -97,9 +95,7 @@
     }
 
     .advert-tags-container-right div {
-       background-image: url('/static/index/images/advert/blacklist.png');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+
     }
 
     .advert-carousel {
