@@ -27,7 +27,7 @@
     <!-- 标签广告 -->
     <div class="advert-tags">
         <div class="advert-tags-container">
-            <a href="/certain/{$ido->id}">
+            <a href="{$bill ? '/products'.$bill->id : '#'}">
                 <div class="advert-tags-container-left">
                     <div class="advert-icon">
                         <img src="{:env('APP_URL')}/static/index/images/advert/money.png" alt=""/>
@@ -50,10 +50,12 @@
     <!-- 滚动播报 -->
     <div class="advert-carousel">
         <div class="advert-carousel-container">
-            <div class="advert-carousel-img"></div>
+            <div class="advert-carousel-img">
+                <img src="/static/index/images/1.jpg" alt="">
+            </div>
             <div class="advert-carousel-text">
                 <h5>有钱花</h5>
-                <p>189****6307下款 50000 元成功</p>
+                <p>189****6307下款 5000 元成功</p>
             </div>
         </div>
     </div>
@@ -119,7 +121,7 @@
     <div class="product-header">
         <div class="product-header-container">
             <div>
-                <img src="__INDEX__/images/product/new.png">
+                <img src="__INDEX__/images/product/card.png">
             </div>
             <h6>凭身份证下款</h6>
         </div>
@@ -211,7 +213,7 @@
             <div>
                 <img src="__INDEX__/images/product/new.png">
             </div>
-            <h6>爆款新产品</h6>
+            <h6>爆款新新产品</h6>
         </div>
     </div>
     <!-- 产品列表 -->
@@ -299,7 +301,7 @@
     <div class="product-header">
         <div class="product-header-container">
             <div>
-                <img src="__INDEX__/images/product/new.png">
+                <img src="__INDEX__/images/product/credit.png">
             </div>
             <h6>不上征信</h6>
         </div>
@@ -389,7 +391,7 @@
     <div class="product-header">
         <div class="product-header-container">
             <div>
-                <img src="__INDEX__/images/product/new.png">
+                <img src="__INDEX__/images/product/tourist.png">
             </div>
             <h6>黑户可下</h6>
         </div>
@@ -474,12 +476,12 @@
     </div>
     {/if}
 
-    {if empty($large)}
+    {if !empty($large)}
     <!-- 产品分类头 -->
     <div class="product-header">
         <div class="product-header-container">
             <div>
-                <img src="__INDEX__/images/product/new.png">
+                <img src="__INDEX__/images/product/big.png">
             </div>
             <h6>大额分期贷款</h6>
         </div>
@@ -566,13 +568,20 @@
 
 </div>
 
+
+<div class="more">
+    <a href="/categorys">点击加载更多 ></a>
+</div>
+
 <!--活动的钱袋-->
-<div class="money" onclick="location.href='{$bill->product_url ?? '#'}'">
+<a href="/products/{$bill->id}">
+<div class="money">
     <div>
         <img src="__INDEX__/images/money.png" alt="">
     </div>
     <h5>3分钟下款</h5>
 </div>
+</a>
 {include file="public/_menu" /}
 {/block}
 

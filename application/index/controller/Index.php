@@ -33,7 +33,7 @@ class Index extends Controller
 
         $black = ($black = Category::where('name','黑户可下')->find()) ? $black->product()->order('update_time desc')->limit(0,3)->select() : [];
 
-        $large = ($large = Category::where('name','大额分期贷款')->find()) ? $large->product()->order('update_time desc')->limit(0,3)->select() : [];
+        $large = ($large = Category::where('name','大额分期贷')->find()) ? $large->product()->order('update_time desc')->limit(0,3)->select() : [];
 
         $ido = Category::where('name','一定贷到钱')->find();
         $idt = Category::where('name','通过率98%')->find();

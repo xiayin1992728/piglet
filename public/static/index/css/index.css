@@ -421,6 +421,26 @@
         font-size: 0.5rem;
     }
 
+    .more {
+        margin-top: 10vw;
+        margin-bottom: 20vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .more a {
+        width: 80vw;
+        height: 10vw;
+        text-decoration: none;
+        font-size: 4vw;
+        color: white;
+        background: #007DDB;
+        border-radius: 4vw;
+        text-align: center;
+        line-height: 10vw;
+    }
+
 
 
 
