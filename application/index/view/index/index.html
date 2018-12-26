@@ -11,13 +11,13 @@
 <!-- 顶部轮播 -->
 <div class="swiper-container">
     <div class="swiper-wrapper">
-    {if !empty($carousel) }
+        {if !empty($carousel) }
         {foreach $carousel as $vo }
-            <div class="swiper-slide" onclick="location.href='{$vo.link}'">
-                <img src="{$vo.img}" width="100%">
-            </div>
+        <div class="swiper-slide" onclick="location.href='{$vo.link}'">
+            <img src="{$vo.img}" width="100%">
+        </div>
         {/foreach}
-    {/if}
+        {/if}
     </div>
 </div>
 
@@ -571,6 +571,7 @@
 <script type="text/javascript">
     let n = 0;
     let timer = 0;
+    let datas = null;
     // 顶部轮播
     var swiper = new Swiper('.swiper-container', {
         spaceBetween: 30,
@@ -581,6 +582,21 @@
         },
     });
 
+    // 获取产品数据
+    $.ajax({
+        url: '/products',
+        type: 'get',
+        dataType: 'json',
+        success: function (res) {
+            console.log(res);
+            if (res.status == 200) {
+                datas = res.data;
+            } else {
+                datas = [];
+            }
+        }
+    })
+
     // 滚动字幕
     setInterval(function () {
         // 动画淡出元素
@@ -588,12 +604,19 @@
             top: '-1.2rem',
         }, 2000);
 
-
+        let length = datas.length - 1;
+        let index = GetRandomNum(0,length);
+        let section = ['3','5','7','8'];
+        let phone = '1'+section[GetRandomNum(0,5)]+GetRandomNum(0,9)+'****'+GetRandomNum(0,9)+GetRandomNum(0,9)+GetRandomNum(0,9)+GetRandomNum(0,9);
+        let moneySection = getRange(1000,50000,1000);
+        let money = GetRandomNum(0,moneySection.length-1);
         let html = '<div class="advert-carousel-container" style="top:1.5rem">\n' +
-            '<div class="advert-carousel-img"></div>\n' +
+            '<div class="advert-carousel-img">' +
+            '<img src="{:env("APP_URL")}'+datas[index].product_icon+'" />' +
+            '</div>\n' +
             '<div class="advert-carousel-text">\n' +
-            '<h5>有钱花</h5>\n' +
-            '<p>189****6307下款 60000 元成功</p>\n' +
+            '<h5>'+datas[index].name+'</h5>\n' +
+            '<p>'+phone+'下款 '+money+' 元成功</p>\n' +
             '</div>\n' +
             '</div>';
 
@@ -623,12 +646,29 @@
         $('.money').css('transform', 'rotate(' + n + 'deg)');
     }, 100);
 
+    // 生成随机整数
+    function GetRandomNum(Min, Max) {
+        var Range = Max - Min;
+        var Rand = Math.random();
+        return (Min + Math.round(Rand * Range));
+    }
+
+    // 生成数组
+    function getRange(start,end,step)
+    {
+        let arr = [];
+        for (let i=start;i<=end;i+=step) {
+            arr.push(i);
+        }
+        return arr;
+    }
+
     // 跳转一定贷到钱
     $('.advert-tags-container-left').on('click', function () {
         location.href = '/pro'
     })
 
     // 刷新数据
-    
+
 </script>
 {/block}
