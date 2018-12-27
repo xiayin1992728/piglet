@@ -1,6 +1,5 @@
  html, body {
       position: relative;
-      height: 100%;
     }
     body {
       background: #eee;
@@ -254,7 +253,6 @@
 
     /*产品*/
     .product {
-        margin-bottom:35vw;
     }
 
     /*产品头部*/
@@ -423,8 +421,7 @@
 
     .more {
         margin-top: 5vw;
-        position: relative;
-        bottom: 28vw;
+        margin-bottom: 20vw;
         display: flex;
         align-items: center;
         justify-content: center;
