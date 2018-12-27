@@ -8,14 +8,14 @@ body,p,div,input {
     position: fixed;
     z-index: -99;
     top: 0;
-    background: url('/static/index/images/back.jpg');
+    background: url('/static/index/images/back.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
 .content {
     position: relative;
-    top:30vw;
+    top:60vw;
     padding: 0 3vw;
 }
 
