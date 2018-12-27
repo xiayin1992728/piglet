@@ -60,7 +60,8 @@ class Sessions extends Controller
                     ],
                 ]);
             } catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $e) {
-                Session::flash('error','位置错误请联系管理员');
+                halt($e->getExceptions());
+                Session::flash('error','未知错误请联系管理员');
                 return redirect('/index/login');
             }
         }
