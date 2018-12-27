@@ -254,7 +254,7 @@
 
     /*产品*/
     .product {
-
+        margin-bottom:35vw;
     }
 
     /*产品头部*/
@@ -423,7 +423,8 @@
 
     .more {
         margin-top: 5vw;
-        margin-bottom: 30vw;
+        position: relative;
+        bottom: 28vw;
         display: flex;
         align-items: center;
         justify-content: center;
