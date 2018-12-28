@@ -9,14 +9,16 @@ return [
         'strategy' => \Overtrue\EasySms\Strategies\OrderStrategy::class,
 
         // 默认可用的发送网关
-        'gateways' => [
-            'yunpian', 'aliyun',
+        'gateways' => ['aliyun',
         ],
     ],
     // 可用的网关配置
     'gateways' => [
         'errorlog' => [
             'file' => '/tmp/easy-sms.log',
+        ],
+        'yunpian' => [
+            'api_key' => '824f0ff2f71cab52936axxxxxxxxxx',
         ],
         'aliyun' => [
             'access_key_id' => env('ALIYUN_ACCESS_KEY'),
