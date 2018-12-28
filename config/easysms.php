@@ -18,9 +18,6 @@ return [
         'errorlog' => [
             'file' => '/tmp/easy-sms.log',
         ],
-        'yunpian' => [
-            'api_key' => '824f0ff2f71cab52936axxxxxxxxxx',
-        ],
         'aliyun' => [
             'access_key_id' => env('ALIYUN_ACCESS_KEY'),
             'access_key_secret' => env('ALIYUN_KEY_SECRET'),
