@@ -11,7 +11,7 @@
 <!-- 顶部轮播 -->
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        {if !empty($carousel) }
+        {if count($carousel) }
         {foreach $carousel as $vo }
         <div class="swiper-slide" onclick="location.href='{$vo.link}'">
             <img src="{$vo.img}" width="100%">
@@ -78,6 +78,7 @@
 </div>
 
 <!-- 秒下款产品 -->
+{if count($second)}
 <div class="second-product-header">
     <div class="second-product-header-container">
         <div>
@@ -113,10 +114,10 @@
         {/foreach}
     </div>
 </div>
-
+{/if}
 <!-- 产品列表 -->
 <div class="product">
-    {if !empty($card)}
+    {if count($card)}
     <!-- 产品分类头 -->
     <div class="product-header">
         <div class="product-header-container">
@@ -206,7 +207,7 @@
     </div>
     {/if}
 
-    {if !empty($explosive)}
+    {if count($explosive)}
     <!-- 产品分类头 -->
     <div class="product-header">
         <div class="product-header-container">
@@ -296,7 +297,7 @@
     </div>
     {/if}
 
-    {if !empty($credit)}
+    {if count($credit)}
     <!-- 产品分类头 -->
     <div class="product-header">
         <div class="product-header-container">
@@ -386,7 +387,7 @@
     </div>
     {/if}
 
-    {if !empty($black)}
+    {if count($black)}
     <!-- 产品分类头 -->
     <div class="product-header">
         <div class="product-header-container">
@@ -476,7 +477,7 @@
     </div>
     {/if}
 
-    {if !empty($large)}
+    {if count($large)}
     <!-- 产品分类头 -->
     <div class="product-header">
         <div class="product-header-container">
