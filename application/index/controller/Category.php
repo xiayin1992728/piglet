@@ -19,7 +19,7 @@ class Category extends Controller
     public function category($category)
     {
         $category = CategoryModel::where('name',$category)->find();
-        $products = $category ? $category->product()->order('update_time desc')->limit(0,6)->select() : [];
+        $products = $category ? $category->product()->order('update_time desc')->select() : [];
 
         if (empty($products)) {
             return ['status' => 402,'msg' => '没有更多数据'];
