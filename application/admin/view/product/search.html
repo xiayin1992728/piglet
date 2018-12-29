@@ -3,17 +3,9 @@
 <div class="x-body">
     <xblock>
         <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>-->
-        {if Session::get('admin','admin')->can('产品添加')}<button class="layui-btn" onclick="x_admin_show('添加产品','product/create','1200','600')"><i class="layui-icon"></i>添加</button>{/if}
-        <button class="layui-btn" style="position: relative;left: 88%;" onclick="location.href='product'"><i class="layui-icon">&#xe9aa;</i></button>
+        <!--{if Session::get('admin','admin')->can('产品添加')}<button class="layui-btn" onclick="x_admin_show('添加产品','product/create','1200','600')"><i class="layui-icon"></i>添加</button>{/if}-->
+        <!--<button class="layui-btn" style="position: relative;left: 88%;" onclick="location.href='product'"><i class="layui-icon">&#xe9aa;</i></button>-->
     </xblock>
-    <div class="layui-row">
-        <form class="layui-form layui-col-md12 x-so" method="post" action="/product/search">
-            <input class="layui-input" placeholder="开始日" name="start" id="start">
-            <input class="layui-input" placeholder="截止日" name="end" id="end">
-            <input type="text" name="name"  placeholder="请输入产品名" autocomplete="off" class="layui-input">
-            <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
-        </form>
-    </div>
     <table class="layui-table">
         <thead>
         <tr>
@@ -31,16 +23,16 @@
         </thead>
         <tbody>
         {foreach $products as $product}
-            <tr>
+        <tr>
             <td>
                 <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$product->id}'><i class="layui-icon">&#xe605;</i></div>
             </td>
             <td>{$product->id}</td>
             <td>{$product->name}</td>
-                <td><img src="{$product->product_icon}" alt="" width="50" height="50"></td>
+            <td><img src="{$product->product_icon}" alt="" width="50" height="50"></td>
             <td>{$product->product_url}</td>
             <td>{$product->money}</td>
-                <td>{$product->getName()}</td>
+            <td>{$product->getName()}</td>
             <td>{$product->update_time}</td>
             <td class="td-manage">
                 {if Session::get('admin','admin')->can('产品查看')}
@@ -64,27 +56,9 @@
         </tbody>
     </table>
     <div class="page">
-        {$products|raw}
     </div>
 
 </div>
 </body>
 {include file="public/footer" /}
-<script>
-    layui.use('laydate', function(){
-        var laydate = layui.laydate;
-
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#start', //指定元素
-            type: 'datetime'
-        });
-
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#end', //指定元素
-            type: 'datetime'
-        });
-    });
-</script>
 </html>

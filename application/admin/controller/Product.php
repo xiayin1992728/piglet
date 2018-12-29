@@ -8,6 +8,7 @@ use app\common\validate\Product as ProductVlidate;
 use app\common\model\Category;
 use app\common\model\Tag;
 use think\facade\Env;
+use think\Request;
 
 class Product extends Controller
 {
@@ -193,5 +194,26 @@ class Product extends Controller
             // 上传失败获取错误信息
             return ['status' => 402, 'msg' => $file->getError()];
         }
+    }
+
+    public function search(Request $request)
+    {
+        //halt($request->post());
+        $data = array_filter($request->post());
+        $item = [
+            'start' => ['update_time','>',$request->post('start')],
+            'end' => ['update_time','<',$request->post('end')],
+            'name' => ['name','like','%'.$request->post('name').'%'],
+        ];
+        $where = [];
+        foreach ($item as $k => $v) {
+            if (array_key_exists($k,$data)) {
+                $where[] = $v;
+            }
+        }
+        $products = ProductModel::where($where)->select();
+
+        //halt(ProductModel::getLastSql());
+        return $this->fetch('product/search',['products' => $products]);
     }
 }

@@ -34,6 +34,7 @@ Route::get('product/:id/edit','admin/product/edit')->middleware(['auth']);
 Route::put('product/:id','admin/product/update')->middleware(['auth']);
 Route::delete('product/:id','admin/product/delete')->middleware(['auth']);
 Route::post('product/upload','admin/product/upload')->middleware(['auth']);
+Route::post('product/search','admin/product/search')->middleware(['auth']);
 
 // 登录
 Route::get('login','admin/login/login')->middleware(['adminGuest']);
