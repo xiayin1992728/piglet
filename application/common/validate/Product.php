@@ -14,7 +14,8 @@ class Product extends Validate
      */	
 	protected $rule = [
 	    'name' => ['require'],
-        'category_id' => ['require'],
+        'category' => ['require'],
+        'tag' => 'require',
         'money' => ['require'],
         'loan_time' => ['require'],
         'interset_rate' => ['require'],
@@ -36,7 +37,8 @@ class Product extends Validate
      */	
     protected $message = [
         'name.require' => '请输入产品名称',
-        'category_id.require' => '请选择产品分类',
+        'category.require' => '请选择产品分类',
+        'tag.require' => '选择标签',
         'money.require' => '请输入可借额度',
         'loan_time.require' => '请输入放款时间',
         'interest_rate.require' => '请输入利率',

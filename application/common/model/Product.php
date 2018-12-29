@@ -12,7 +12,7 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo('Category');
+        return $this->belongsToMany('Category','product_category','category_id','product_id');
     }
 
     public function tag()
@@ -22,6 +22,6 @@ class Product extends Model
 
     public function getName()
     {
-        return $this->category_id ? $this->category['name'] : '';
+        return implode('|',$this->category()->column('name'));
     }
 }

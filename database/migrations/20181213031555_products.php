@@ -31,7 +31,6 @@ class Products extends Migrator
         // create the table
         $table = $this->table('products',array('engine'=>'InnoDB'));
         $table->addColumn('name', 'string',array('limit' => 40,'comment'=>'产品名称'))
-            ->addColumn('category_id','integer',array('limit'=>10,'null' => true,'comment' => '分类外键'))
             ->addColumn('money', 'decimal',array('limit' => [10,2],'comment'=>'可借额度'))
             ->addColumn('money_section','string',array('limit' => 60,'comment' => '额度范围'))
             ->addColumn('loan_time', 'string',array('limit' => '40','default'=> '7','comment'=>'放款时间'))

@@ -66,7 +66,6 @@ class ProductSeeder extends Seeder
         for ($i=0;$i<50;$i++) {
             $data[] = [
                 'name' => '小猪来帮忙'.$i,
-                'category_id' => random_int(1,13),
                 'money' => '20000',
                 'loan_time' => '7',
                 'interest_rate' => '0.05%',
