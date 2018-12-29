@@ -19,7 +19,7 @@ class Product extends Controller
      */
     public function index(ProductModel $product)
     {
-        $products = $product->paginate(10);
+        $products = $product->order('update_time desc')->paginate(10);
         $this->assign('products', $products);
         return $this->fetch();
     }
