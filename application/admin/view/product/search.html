@@ -36,17 +36,17 @@
             <td>{$product->update_time}</td>
             <td class="td-manage">
                 {if Session::get('admin','admin')->can('产品查看')}
-                <a title="查看" onclick="x_admin_show('查看','product/{$product->id}')" href="javascript:;">
+                <a title="查看" onclick="x_admin_show('查看','/product/{$product->id}')" href="javascript:;">
                     <i class="layui-icon"></i>
                 </a>
                 {/if}
                 {if Session::get('admin','admin')->can('产品修改')}
-                <a title="编辑"  onclick="x_admin_show('编辑','product/{$product->id}/edit')" href="javascript:;">
+                <a title="编辑"  onclick="x_admin_show('编辑','/product/{$product->id}/edit')" href="javascript:;">
                     <i class="layui-icon">&#xe642;</i>
                 </a>
                 {/if}
                 {if Session::get('admin','admin')->can('产品删除')}
-                <a title="删除" onclick="del(this,'{$product->id}','product/{$product->id}')" href="javascript:;">
+                <a title="删除" onclick="del(this,'{$product->id}','/product/{$product->id}')" href="javascript:;">
                     <i class="layui-icon">&#xe640;</i>
                 </a>
                 {/if}
